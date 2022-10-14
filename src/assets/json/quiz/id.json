@@ -1,0 +1,358 @@
+[
+	{
+		"question": "Apa warna langit?",
+		"answer": ["biru"]
+	},
+	{
+		"question": "Ada berapa huruf dalam alfabet?",
+		"answer": ["26", "dua puluh enam"]
+	},
+	{
+	  "question": "Berapa banyak jari yang dimiliki manusia?",
+	  "answer": ["10", "sepuluh"]
+	},
+	{
+	  "question": "Berapa banyak hari dalam satu minggu?",
+	  "answer": ["7", "tujuh"]
+	},
+	{
+	  "question": "Kalo ada orang tertarik terhadap sesuatu yang di miliki orang tersebut, apa ya ?",
+	  "answer": ["suka", "demen"]
+	},
+	{
+	  "question": "1 + 1 = (....)",
+	  "answer": ["2", "dua"]
+	},
+	{
+	  "question": "Kaki nya banyak, dia mirip kelabang apa kah itu ?",
+	  "answer": ["kaki seribu","1000"]
+	},
+	{
+	  "question": "Kulit, ada 5 dan bertulang, bisa buat di pake makan apakah itu ?",
+	  "answer": ["tangan"]
+	},
+	{
+	  "question": "Kalau ada angsa lima, dikali dua. Berapa total semua angsa ?",
+	  "answer": ["tetap 5"]
+	},
+	{
+	  "question": "Apa nama sebuah benda yang kalau ditutup berubah jadi tongkat, tapi ketika dibuka malah jadi tenda?",
+	  "answer": ["payung"]
+	},
+	{
+	  "question": "Apakah huruf keempat dalam abjad ?",
+	  "answer": ["huruf a"]
+	},
+	{
+	  "question": "bahan bakar yang berasal dari alam?",
+	  "answer": ["batu bara"]
+	},
+	{
+	  "question": "penduduk negara mana yang biasanya memakai pakaian negaranya?",
+	  "answer": ["arab"]
+	},
+	{
+	  "question": "berapa juta sel dalam otak manusia ?",
+	  "answer": ["1000 juta","1000"]
+	},
+	{
+	  "question": "merk gel rambut ?",
+	  "answer": ["gatsby"]
+	},
+	{
+	  "question": "software chatting ?",
+	  "answer": ["mirc","messenger","google talk","skype","camfrog"]
+	},
+	{
+	  "question": "Pencipta lagu INDONESIA RAYA ?",
+	  "answer": ["wage rudolf supratman"]
+	},
+	{
+	  "question": "seorang sahabat ? pasti suka dapat (..) sama kita kan. Sebuah pertemanan yang amat karib dari kecil.",
+	  "answer": ["diajak curhat","diajak berbagi"]
+	},
+	{
+	  "question": "personil ngelaba ? narji dan denny mereka adalah pelawak yang pernah ada di acara tv show ngelaba.",
+	  "answer": ["eko","parto","kiwil"]
+	},
+	{
+	  "question": "yang biasa mengambang di sungai?",
+	  "answer": ["kayu","sampah","pakaian","mayat"]
+	},
+	{
+	  "question": "aduh aku digigit....(hewan yang sering membuat orang-orang gak bisa tidur)",
+	  "answer": ["nyamuk","anjing","ular","tikus"]
+	},
+	{
+	  "question": "apa saja kelemahan polisi lalu lintas?",
+	  "answer": ["lihat plat nomor kebalik"]
+	},
+	{
+	  "question": "Nama kapal berdasarkan pelayarannya ?",
+	  "answer": ["kapal selam","kapal laut"]
+	},
+	{
+	  "question": "berhubungan dengan musim kemarau?",
+	  "answer": ["kering","panas"]
+	},
+	{
+	  "question": "Dalam pernikahan mempelai wanita yang sudah sah.",
+	  "answer": ["istri"]
+	},
+	{
+	  "question": "julukan club real madrid F.C ?",
+	  "answer": ["El Real"]
+	},
+	{
+	  "question": "nama danau ?",
+	  "answer": ["towuti"]
+	},
+	{
+	  "question": "tempat yang dijadikan ajang maksiat ?",
+	  "answer": ["hotel","diskotik"]
+	},
+	{
+	  "question": "tempat wisata di belanda ?",
+	  "answer": ["madame","tussaud","keunkenhoff"]
+	},
+	{
+	  "question": "situs berita?",
+	  "answer": ["kompas","bolanews","detik"]
+	},
+	{
+	  "question": "apa saja yang dibeli ketika ingin menonton bioskop?",
+	  "answer": ["popcorn","snack","tisu","permen"]
+	},
+	{
+	  "question": "sebutkan lagu linkin park?",
+	  "answer": ["numb","faint","breaking the habbit","paper cut"]
+	},
+	{
+	  "question": "Istilah Samurai?",
+	  "answer": ["buke"]
+	},
+	{
+	  "question": "Universitas Palembang?",
+	  "answer": ["unsri"]
+	},
+	{
+	  "question": "mall di surabaya/ semarang?",
+	  "answer": ["ciputra"]
+	},
+	{
+	  "question": "rokok di indonesia ?",
+	  "answer": ["djarum","dji sam soe","sampoerna"]
+	},
+	{
+	  "question": "sebutkan alat penunjuk arah ?",
+	  "answer": ["kompas","bayangan","matahari"]
+	},
+	{
+	  "question": "Penyanyi seksi keluaran hollywood?",
+	  "answer": ["britney spear","shakira","jennifer lopez"]
+	},
+	{
+	  "question": "berhubungan dgn kombinasi",
+	  "answer": ["warna","pakaian","pukulan","tendangan"]
+	},
+	{
+	  "question": "tokoh dalam film peterpan",
+	  "answer": ["peterpan","wendy","kapten hook"]
+	},
+	{
+	  "question": "kepanjangan pasutri ? (berhubungan dalam satu atap)",
+	  "answer": ["pasangan suami istri"]
+	},
+	{
+	  "question": "mainan apa saja yang ada di dunia fantasi ?",
+	  "answer": ["halilintar","niagara","arung jeram","kora-kora","kora kora"]
+	},
+	{
+	  "question": "berapa lama orang menjemur kasur ?",
+	  "answer": ["seharian"]
+	},
+	{
+	  "question": "nama lain alat kelamin laki-laki ?",
+	  "answer": ["rudal","tempek","burung"]
+	},
+	{
+	  "question": "di saat apa orang mematikan ponsel ?",
+	  "answer": ["rapat","ibadah","ujian","pacaran"]
+	},
+	{
+	  "question": "batuan mineral yang berharga tinggi ?",
+	  "answer": ["intan","berlian","jamrud","permata"]
+	},
+	{
+	  "question": "Nama pasukan yang di pimpin oleh letnan jendral soeharto pada waktu pembersihan ormas PKI ?",
+	  "answer": ["trisula"]
+	},
+	{
+	  "question": "nama bulan dalam bahasa jepang ?",
+	  "answer": ["Ichigatsu", "Nigatsu", "Sangatsu", "Shigatsu", "Gogatsu", "Rokugatsu", "Nanagatsu", "Hachigatsu", "Kugatsu", "Jugatsu", "Juuichigatsu", "Juunigatsu"]
+	},
+	{
+	  "question": "tanda kendaraan ?",
+	  "answer": ["dk-bali","b-jakarta","d-bandung","dd-minahasa"]
+	},
+	{
+	  "question": "yang mengaku sebagai jendral nasution?",
+	  "answer": ["pierre tendean"]
+	},
+	{
+	  "question": "negara afrika utara ?",
+	  "answer": ["maroko","tunisia","aljazair"]
+	},
+	{
+	  "question": "penerbit buku di INDONESIA?",
+	  "answer": ["erlangga","grafindo","gramedia"]
+	},
+	{
+	  "question": "tempat wisata di indonesia ?",
+	  "answer": ["bali","danau toba","malioboro","borobudur","cibubur"]
+	},
+	{
+	  "question": "cara efektoif membunuh nyamuk ?",
+	  "answer": ["semprot","tabok","lempar"]
+	},
+	{
+	  "question": "penyanyi lagu despacito ?",
+	  "answer": ["luis fonsi","daddy yanke","justin bieber"]
+	},
+	{
+	  "question": "mall/pusat perbelanjaan yang ada di Surabaya ?",
+	  "answer": ["PTC","Carefour","Galaxy mall"]
+	},
+	{
+	  "question": "mata uang yg berawalan R ?",
+	  "answer": ["rupee","rupiah","ringgit","riel"]
+	},
+	{
+	  "question": "senjata tradisional indonesia (2)?",
+	  "answer": ["tombak","bambu runcing","mandau","keris","parang","golok","kelewang"]
+	},
+	{
+	  "question": "personil laruku ?",
+	  "answer": ["yuki","teru","hyde","ken"]
+	},
+	{
+	  "question": "tingkatan kelas dalam tinju ?",
+	  "answer": ["berat","ringan"]
+	},
+	{
+	  "question": "macam tense inggris ?",
+	  "answer": ["perfect tense","past tense","present tense","future tense"]
+	},
+	{
+	  "question": "nama pelawak indonesia yang sudah alm ?",
+	  "answer": ["ade namnung","olga syahputra","benyamin","dono","kasino","ishak"]
+	},
+	{
+	  "question": "profesi yg memerlukan orang dengan tubuh tinggi ?",
+	  "answer": ["tentara","pramugari","peragawati","polisi","pilot"]
+	},
+	{
+	  "question": "personil band UNGU ?",
+	  "answer": ["pasha","enda","onci","makki","rowman"]
+	},
+	{
+	  "question": "Yang dapat dimakan campuran dengan roti ?",
+	  "answer": ["salada","tomat","margarin","sosis","selai","susu","cokelat"]
+	},
+	{
+	  "question": "service dalnet ?",
+	  "answer": ["memoserv","chanserv","nickserv","operserv"]
+	},
+	{
+	  "question": "teman donald bebek ?",
+	  "answer": ["lang ling lung","agus angsa","untung","desi"]
+	},
+	{
+	  "question": "nama megara eropa ?",
+	  "answer": ["inggris","italia","belanda"]
+	},
+	{
+	  "question": "merk baterai di indonesia ?",
+	  "answer": ["abc","energizer","panasonic","eveready","national"]
+	},
+	{
+	  "question": "negara bagian australia ?",
+	  "answer": ["sydney","melbourne","perth"]
+	},
+	{
+	  "question": "tokoh kartun jepang",
+	  "answer": ["sinchan","doraemon","kenji","sailormoon","candy-candy"]
+	},
+	{
+	  "question": "mata air",
+	  "answer": ["sungai","laut","danau","air"]
+	},
+	{
+	  "question": "ukuran kertas",
+	  "answer": ["a4","a5","letter","legal","executive"]
+	},
+	{
+	  "question": "susu sekarang ada berbagai rasa, apa saja itu?",
+	  "answer": ["cokelat","manis","strawberry","mocca","grape","nanas"]
+	},
+	{
+	  "question": "raja kerajaan singasari ?",
+	  "answer": ["tunggul ametung"]
+	},
+	{
+	  "question": "kenapa orang makan ?",
+	  "answer": ["lapar","stress","gengsi","pengen gemuk","nafsu"]
+	},
+	{
+	  "question": "apa yg biasanya sering lupa dibawa ?",
+	  "answer": ["dompet","tas","kendaraan","pacar","rokok","topi","hape"]
+	},
+	{
+	  "question": "macam - macam pisang ?",
+	  "answer": ["raja","ambon","tanduk","mas","molen"]
+	},
+	{
+	  "question": "jenis makanan atau minuman yang disukai untuk berbuka puasa ?",
+	  "answer": ["kurma","air putih","es kelapa muda","kolak","gorengan"]
+	},
+	{
+	  "question": "penyanyi membuat sebuah kumpulan lagu",
+	  "answer": ["album"]
+	},
+	{
+	  "question": "televisi yang menggunakan sumber siaran dari satelit",
+	  "answer": ["parabola"]
+	},
+	{
+	  "question": "tempat menimba ilmu ?",
+	  "answer": ["sekolahan","pesantren","universitas"]
+	},
+	{
+	  "question": "mata pelajaran menggunakan angka",
+	  "answer": ["ipa","matematika"]
+	},
+	{
+	  "question": "manusia yang dapat melahirkan",
+	  "answer": ["ibu","perempuan","wanita"]
+	},
+	{
+	  "question": "nama lain dari taman anak",
+	  "answer": ["TK"]
+	},
+	{
+	  "question": "sebuah bidang olahraga yang berhubungan dengan air",
+	  "answer": ["renang","dayung"]
+	},
+	{
+	  "question": "nama lain dari badminton",
+	  "answer": ["bulu tangkis"]
+	},
+	{
+	  "question": "yang bertugas dalam menjaga pertahanan dalam sepak bola",
+	  "answer": ["penjaga gawang","bek"]
+	},
+	{
+	  "question": "Gulat kelas berat dalam lingkaran di negara jepang",
+	  "answer": ["sumo"]
+	}
+]

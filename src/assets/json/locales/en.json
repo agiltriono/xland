@@ -1,0 +1,563 @@
+{
+  "misc": {
+    "rr": {
+      "description": "Add reaction wit role for when user add reaction.",
+      "info": "**Description:**\n{description}\n**Reaction:**\n{field}\n\n**Add description**\n`desc` <description>\n`example:` desc react to get a role\n**Add Reaction and Role**\n`react <emoji> <@role>`\n`example:` react 😁 @role\n**Sending Reaction to specific channel**\n`send <#channel>`\n`Cancel` Close setting"
+    },
+    "ticket": {
+      "description": "It lets people easily create a ticket, and tells them what kind of ticket they're creating. Each ticket created by user can have different category depending on the support. If you created a category, so they knew what exactly category are suited for their need.",
+      "setting": "**CURRENT SETTING**\n{current}\n`Channel` Set open ticket channel\n`Category` Set ticket category\n`Moderator` Set moderator role\n`Cancel` Close setting",
+      "channel": "**This channel will be set as default open ticket, a member who want a ticket must have to come there, indeed with specified role are allowed to come.**",
+      "category": "**Category must be empty not containing any channel inside.\nThis category will be used when people open a ticket.**",
+      "moderator": "**This role has a full control for managing ticket system on the server but not for changing ticket setting.**",
+      "notset": "System ticket not yet properly configured require config {value}",
+      "notinchannel": "You're not in open ticket channel !",
+      "usernotexist": "Member isn't registered on ticket.",
+      "userremoved": "Member has been removed from the ticket.",
+      "useradded": "Member has been added to ticket.",
+      "useralreadyexist": "Member already exist.",
+      "topic": "Topic : {topic}\n\n`Back` Go to previous setting\n`Cancel` Close setting\n`Add <topic>` Add single topic or multiple topic to the list.\nexample 1 : `Add donation,game,other,payment`\nexample 2 : `Add donation`\n`Delete <topic>` Delete topic from list one per topic\nexample : `delete donation`\n`Apply` Apply changes"
+    },
+    "suggestion": {
+      "description": "Give suggestions in the community for certain things according to voting",
+      "info": "`Current :` {channel}\n\n**Please mention channel want to be used as suggestion channel**\n\n`Exit` Close setting",
+      "notinchannel": "Your'e not in suggestion channel rn !"
+    }
+  },
+  "moderation": {
+    "setting": {
+      "description": "Set moderation for server such as modification history, blocking, etc.",
+      "info": "**PREFERENCES**\n`Verification` Set verification channel for member pending approval\n`Log` Set log channel\n`Badwords` Set Badword list or block bad language\n`Infraction` Set infraction result, max infraction\n`Cancel` Close setting"
+    },
+    "verification": {
+      "info": "**Current channel :** {channel}\n`Back` Go to previous setting\n`Cancel` Close setting",
+  	  "done": "Verification channel has been set to <#{channel}>"
+    },
+    "infraction": {
+      "main": "**Punishment :** {punishment}\n**Infraction :** {total}\n\n`Back` Go to previous setting\n`Cancel` Close setting",
+      "punishment": "**Select the action should be use for infraction**\n\n`Back` Go to previous setting\n`Cancel` Close setting",
+      "maxinfract": "**Input the number of infraction to be take**\n\n`Back` Go to previous setting\n`Cancel` Close setting"
+    },
+    "badword": {
+      "info": "Word blocked : {wordblock}\nWord list : {wordlist}\n\n`Back` Go to previous setting\n`Cancel` Close setting\n`Enable` Enable word block\n`Disable` Disable word block\n`Add <word>` Add word to the list separate word by commas\n`Delete <word>` Delete word from list one per word\n`Apply` Apply changes",
+      "detected": "**WARNING: BAD WORD !**"
+    },
+    "log" : {
+  	  "info": "**Current channel :** {channel}\n`Back` Go to previous setting\n`Cancel` Close setting",
+  	  "done": "Log channel has been set to <#{channel}>"
+  	},
+    "warn": {
+      "description": "Gave the member the warning for breaking server rules.",
+      "cantwarn": "You cannot gave warn to <@{user}>!"
+    },
+    "unmute" : {
+      "description": "Revert back muted members after getting muted.",
+      "cantunmute": "<@{user}> wasn't getting muted before",
+      "notmuted": "Member is not currently being muted !",
+      "notfound": "There is no members was muted this time"
+    },
+    "mute" : {
+      "description": "Mute member from server.",
+      "cantmute": "You cannot mute <@{user}>!",
+      "mutedtwice": "You cannot muted member twice in a row !"
+    },
+    "kick": {
+      "description": "Kick member from the server.",
+      "cantkick": "Cannot kick <@{user}>!"
+    },
+    "ban": {
+      "description": "Ban member from the server.",
+      "cantban": "Cannot ban <@{user}>!",
+      "bantwice": "You cannot ban member twice in a row !"
+    },
+    "unban": {
+      "description": "Remove suspended member from the server.",
+      "cantunban": "Bot cannot unblock this user.\nMember : {user}",
+      "notfound": "There is no members was banned this time"
+    }
+  },
+  "economy": {
+    "setting": {
+      "description": "Set leveling system on your server like xp point, level up message, leader board card, rank card",
+      "info": "**CURRENT SETTING**\n\n**Level System:** {levelsys}\n**Level Point** {levelpoint}\n**Rank Card:** {rankcard}\n**Level Message:** {levelmessage}",
+      "levelsys": "You can turn off leveling system, but it's enabled by default.",
+      "levelmsg": "**USAGE**\n**User :** {user}\n**Level :** {lvl}\n**Example :** GG {user} you just advanced to level {lvl}\n`Back` Go to previous setting\n`Cancel` Close setting",
+      "levelchannel": {
+        "info": "**Current channel:** {channel}\n\n\n`Back` Go to previous setting\n`Cancel` Close setting",
+        "done": "Channel has been set to {channel}"
+      },
+      "levelpoint": "Set how much xp to get for level up.\n`Back` Go to previous setting\n`Cancel` Close setting",
+      "rankcard": "`Font` Change font\n`Background` Set your own image as a background",
+      "rankfont": "**Currently used font**\n{selected}",
+      "rankbackground": "**OPTIONS**\nATTACHMENT: send attachment of your background\nURL: send url of the background\n`Back` Go to previous setting\n`Cancel` Close setting"
+    },
+    "give-xp": {
+      "description": "Give some of your xp to members who are also on the server leaderboard, but if it's not on the server leaderboard it won't work if the member hasn't got points in the game. It's meant they will not registered, at least one game has been played.",
+      "status": {
+        "passed": "<@{from}> give {amount} xp to <@{to}>",
+        "amount": "you don't have enough xp to give to someone. At least there is one solution, try collect more xp.",
+        "user": "User <@{target}> is not listed in the leaderboard at this time. So tell them to play the game.",
+        "server": "Server **{server}** is not listed in the leaderboard. It's meant there is absolutely no one is playing the game, so they will not registered to our list, including the server too."
+      }
+    },
+    "rank": {
+      "description": "Get up-to-date information about you/anyone current ranking status.",
+      "canvas": {
+        "statistic": "Statistics",
+        "last_played": "Recent Games",
+        "rank": "Rank",
+        "experience": "Experience"
+      }
+    },
+    "leaderboard": {
+      "description": "see the latest information about the top 10 leaderboards directly on the server."
+    }
+  },
+  "info": {
+    "avatar": {
+      "description": "Show your current avatar."
+    }
+  },
+  "animal": {
+    "cat": {
+      "description": "Get animal cat images randomly."
+    },
+    "dog": {
+      "description": "Get animal dog images randomly."
+    },
+    "fox": {
+      "description": "Get animal fox images randomly."
+    },
+    "duck": {
+      "description": "Get animal duck images randomly."
+    },
+    "chicken": {
+      "description": "Get animal chicken images randomly."
+    },
+    "bird": {
+      "description": "Get animal bird images randomly."
+    },
+    "monkey": {
+      "description": "Get animal monkey's images randomly."
+    }
+  },
+  "role-play": {
+    "breakup": {
+      "description": "Make a break up with someone."
+    },
+    "jail": {
+      "description": "Put any member in jail.",
+      "embed": "***<@{target}> is in prison !***"
+    },
+    "rip": {
+      "description": "Tag the person you want to be a R.I.P to put their profile pic in the grave, by mentioning the target member."
+    },
+    "match": {
+      "description": "Show them that you are compatible with someone you have mention it in the chat.",
+      "canvas": {
+        "header": "It's a Match!",
+        "description": "You and {target} have liked each other."
+      }
+    }
+  },
+  "fun": {
+    "cry": {
+      "description": "Let them know of you feel sad or having a bad day, just call this command afterwards",
+      "embed": {
+        "mention": "***<@{author}> is crying because <@{target}>***",
+        "self": "***<@{author}> being sad.***"
+      }
+    },
+    "angry": {
+      "description": "Angry memes by randomly for member you have mentioned.",
+      "embed": "***<@{author}> is mad at <@{target}>***"
+    },
+    "hug": {
+      "description": "Give a hug to a member which you think is special to you. Actualy it's not a real hug , but you can do this directly via the internet right.",
+      "embed": "***<@{author}> give a hug to <@{target}>***"
+    },
+    "clap": {
+      "description": "Send a clap reaction to specific member you want. Dont forget to mention them in the command.",
+      "embed": {
+        "mention": "***<@{author}> giving applause to <@{target}>***",
+        "self": "***<@{author}> is clapping.***"
+      }
+    },
+    "slap": {
+      "description": "Slap them online to any specific members by mentioning their names.",
+      "embed": "***<@{author}> slap <@{target}>***"
+    },
+    "kiss": {
+      "description": "Kiss a member by mention them in the chat, it will return random anime kiss image for them.\n*Note: All anime gif are belong to user from `TENOR`*",
+      "embed": "***<@{author}> kisses <@{target}>***"
+    },
+    "meme": {
+      "description": "Get random memes with good quality meme from subreddit such as fun, hot, rising, wallpaper etc."
+    }
+  },
+  "games": {
+    "tod": {
+      "description": "How to play players are given honest choices or challenges determined by other players. Selected players will choose a question or dare which will be given to other players. The game is played when the player is on the voice channel.",
+      "command": {
+        "lobby":"**MAKE SURE ALL PLAYERS ARE IN VOICE CHANNEL**\n\n**Players Join**\n{player}",
+        "ingame" : {
+          "bottle_roll": "Spinning the bottle..",
+          "bottle_done": "**The spin has stopped and the bottle is going between 2 people i.e\n<@{player1}> You will give **TRUTH OR DARE** to <@{player2}>\n\n <@{player1}> Please provide your question then select `TRUTH OR DARE`",
+          "tombol_khusus": "This button is only for <@{user}>",
+          "ask" : "<@{user}> **Select your answer !**",
+          "truth": "<@{user}> was choose TRUTH!",
+          "dare": "<@{user}> was choose DARE!",
+          "canceled": "Game End!"
+        }
+      }
+    },
+    "tg": {
+      "description": "Guess the Picture is where you have to guess the image given by the bot with a predetermined time.",
+      "command": {
+        "setting": {
+          "language": "Please choose game language\n",
+          "notlanguage":"Hey, <@{playerid}> language was not found",
+          "playerchoosed": "<@{playerid}>, was choose `{text}` as game language"
+        },
+        "ingame": {
+          "question": "Current stats :\n{players}\n",
+          "wronganswer": "Wrong answer !\nYou got `{strikes}` times strike !",
+          "alreadydead": "You already lose",
+          "gameover": "\nGame is over !\n\nWinner:\n{win}\n\nLose:\n{lose}",
+          "rounds": "Round {round} of {maxround} level {level}"
+        }
+      }
+    },
+	"sk" : {
+	  "description": "Sambung kata atau di singkat SK adalah game yang mengharuskan kamu menyambung ejaan terakhir dari sebuah yang di berikan oleh bot",
+      "command": {
+        "ingame": {
+          "question": "{content}\nStats :\n{players}\n\n\nLanjutkan kata dengan awalan `{awalan}` | acak kata ketik `roll`",
+          "alreadydead": "Kamu sudah kalah!",
+          "gameover": "\nPermainan telah berakhir !\n\nPemenang:\n{win}\n\nkalah:\n{lose}",
+          "rounds": "Ronde {round}"
+        }
+      }
+	},
+    "C4": {
+      "description": "Connect Four is a traditional strategy game played by two players using a slotted board.",
+      "command": {
+        "ingame": {
+          "forfeit": "⛔ <@{player}> was run away from the game!",
+          "win": "🎉 <@{player}> has won the game with `{rewards}xp` !",
+          "aiwin": "🎉 <@{player}> has won the game !",
+          "draw": "🏳️ Game ended in a draw!",
+          "isturn": "turn!",
+          "player": "**{side}** <@{player}> {turn}",
+          "turn": "{player1}\n{player2}",
+          "gameover": "🕐 Game is over !",
+          "ilegalMove": "<@{player}> you cannot add more chip in this column, try again !",
+          "notturn": "<@{player}> It's not your turn!"
+        }
+      }
+    },
+    "math": {
+      "description": "Math in English, which means mathematics is a brain teaser game in addition, subtraction, multiplication, division operations.",
+      "addition": "**ADDITION**\n{l} + {r} = ?",
+      "multiplication": "**MULTIPLICATION**\n{l} - {r} = ?",
+      "substraction": "**SUBSCTRACTION**\n{l} x {r} = ?",
+      "division": "**DIVISION**\n{l} : {r} = ?",
+      "ingame": {
+        "answer": "Correct! the answer is `{h}`\nYour score `{s}`",
+        "timeout": "Ah, time is up!\nYour score `{s}`",
+        "wrong": "Ah, incorrect answer!\nYour score `{s}`",
+        "round": "Yay, you have completed all rounds!\nYour score `{s}` congratulations!"
+      }
+    },
+    "scramble": {
+      "description": "Word Scramble is a challenging vocabulary game for kids. This game is designed to help kids practice their spelling and learn new words. ... They must rearrange the given letters to form the word. This game is a great way to help kids build, test and enhance their vocabulary and spelling skills.",
+      "command": {
+        "setting": {
+          "language": "Please choose game language\n",
+          "notlanguage":"Hey, <@{playerid}> language was not found",
+          "playerchoosed": "<@{playerid}>, was choose `{text}` as game language"
+        },
+        "ingame": {
+          "clue": "CLUE: {clue}",
+          "gameover": "Round is completed!\n\nWinner:\n{win}\n\nLose:\n{lose}",
+          "timeout": "Time is up!\n\nWinner:\n{win}\n\nLose:\n{lose}",
+          "answer": "GG, <@{player}> you just cleared this round !",
+          "rounds": "Round {round} of {maxround}"
+        }
+      }
+    },
+    "hangman": {
+      "description": "Hangman basicaly is a paper and pencil guessing game for two or more players. One player thinks of a word, phrase or sentence and the other(s) tries to guess it by suggesting letters within a certain number of guesses.",
+      "command": {
+        "setting": {
+          "language": "Please choose game language\n",
+          "notlanguage":"Hey, <@{playerid}> language was not found",
+          "playerchoosed": "<@{playerid}>, was choose `{text}` as game language"
+        },
+        "ingame": {
+          "clue": "CLUE: {clue}",
+          "gameover": "Game is over!\n\nWinner:\n{win}\n\nLose:\n{lose}",
+          "answered": "The letters was already taken !",
+          "rounds": "Round {round} of {maxround}"
+        }
+      }
+    },
+    "guesscolor": {
+      "description": "Guess the Color is a popular single player game in Indonesia, you have to guess the color quickly in a short time!",
+      "color": [
+    	  "RED",
+    	  "YELLOW",
+    	  "GREEN",
+    	  "BLUE",
+    	  "PURPLE",
+    	  "ORANGE",
+    	  "WHITE",
+    	  "BLACK",
+    	  "PINK",
+    	  "GRAY",
+    	  "BROWN"
+	    ],
+	    "question": "**Is this {name} color correct ?**",
+	    "passed": "Your answer is correct!\nNext round {round}",
+      "timeout": "Time is up!, game over!",
+      "win": "Your answer is correct!\nYou have completed all the rounds, congratulations!\n\nReward {point}xp",
+      "lose": "Ah <@{player}>, your answer is incorrect, but the game is over!",
+      "rounds": "Round {round} of {maxround}",
+      "no": "NO",
+      "yes": "YES"
+    },
+    "slots": {
+      "description": "Test your luck today by playing slot games, you will get the prize right for you, no catch!",
+      "win": "{result}\nWow! You won **XP+{prize}** congratulation for your best luck today!",
+      "lose": "{result}\nYou lose, try again later!"
+    },
+    "xoxo": {
+      "description": "Play traditional game tic tac toe with your friend's.",
+      "command": {
+        "ingame": {
+          "forfeit": "⛔ <@{player}> was run away from the game!",
+          "win": "🎉 <@{player}> has won XOXO game",
+          "rewards": " with reward `{rewards}xp`",
+          "draw": "🏳️ Game ended in a draw!",
+          "isturn": "turn!",
+          "player": "**{side}** <@{player}> {turn}",
+          "turn": "{player1}\n{player2}",
+          "gameover": "🕐 Game is over !",
+          "notturn": "<@{player}> It's not your turn!"
+        }
+      }
+    },
+    "quiz": {
+      "description": "Play answer and question with multiple choice that make you more insightful.",
+      "command": {
+        "setting": {
+          "language": "Please choose game language\n",
+          "notlanguage":"Hey, <@{playerid}> language was not found",
+          "playerchoosed": "<@{playerid}>, was choose `{text}` as game language"
+        },
+        "ingame": {
+          "question": "{content}\n\nCurrent stats :\n{players}\n",
+          "wronganswer": "Wrong answer !\nYou got `{strikes}` times strike !",
+          "alreadydead": "You already lose",
+          "gameover": "\nGame is over !\n\nWinner:\n{win}\n\nLose:\n{lose}",
+          "rounds": "Round {round} of {maxround}"
+        }
+      }
+    },
+    "abc": {
+      "description": "Play answer and question with multiple choice that make you more insightful.",
+      "command": {
+        "ingame": {
+          "question": "{content}\n\nCurrent stats :\n{players}\n",
+          "wronganswer": "Wrong answer !\nYou got `{strikes}` times strike !",
+          "alreadydead": "You already lose",
+          "gameover": "\nGame is over !\n\nWinner:\n{win}\n\nLose:\n{lose}",
+          "rounds": "Round {round} of {maxround}"
+        }
+      }
+    },
+    "lobby": {
+      "usage": "Information :\n`start` start the game\n`join` join to the game\n`exit` stop current game\n`add bot` invite bot to play with AI\n`add <@mention>` invite people to the game\n**Note: consider to ask them to play this game**\n",
+      "players": "{content}\n\n{players}\n\n",
+      "joined": "<@{playerid}> `{labels}`",
+      "alreadyjoin": "Hey, <@{playerid}> already joined !",
+      "noenoughplayer": "Not enough player !",
+      "exit": "Game canceled"
+    },
+    "locale": {
+      "language": "Please choose game language\n",
+      "notlanguage":"Hey, <@{playerid}> language was not found",
+      "playerchoosed": "<@{playerid}>, was choose `{text}` as game language"
+    },
+    "notjoin": "You are not in the game `join` first or you were added by the host!",
+	  "notplayer": "Sorry you are not player in this the game!"
+  },
+	"language": {
+		"description": "Change current bot language.",
+		"info": "Current language `{currentlang}`\nReply to this chat with your country code to change language.\n`exit` to cancel language setting\nLook at the list of currently available languages : {alllang}",
+		"finish": "Language changed to `{locale}`",
+		"notfound": "There are no languages that support with `{message}`."
+	},
+	"channel": {
+		"description": "Channel settings for receive daily motivation.",
+		"info": "Please mention the channel you want to send motivational words.\n`exit` To exit current channel settings.",
+		"finish": "Motivation will be sent on a scheduled basis according to this configuration.\nServer = {servername}\nChannel = {chids}"
+	},
+	"motivate": {
+		"description": "Send motivation on current channel directly.",
+		"credit": "Motivation by {author}"
+	},
+	"submit": {
+		"description": "Submit your own motivation.",
+		"info": "**ATTENTION**.\nWhen you ask to add your words, you are not allowed to use motivational words from google or anything just use your own work ! 🤔\nPlease reply to this chat with your words.\nMinimum `50` character and Maximum `3000` character.\n`exit` to cancel submission.",
+		"finish": "Yay.<@{author}> your motivation has been successfully added to the daily motivation list 📝"
+	},
+	"prefix": {
+	  "description": "Change the bot prefix.",
+	  "info": "Default prefix is `{curfix}`\nPlese give me the new prefix.\n`exit` to cancel prefix setting.",
+	  "finish": "Prefix has been set to `{prefix}`",
+	  "equal": "The new prefix cannot be the same as before."
+	},
+	"help": {
+		"description": "Show all commands and descriptions.",
+		"info": "Bot prefix is **{prefix}**\n\n`{prefix}help` Command list\n`{prefix}help <command>` Command help",
+		"page": "page {page} | Cancel : Close help",
+		"embed": {
+  		"author": "{author} Help",
+	  	"footer": "Requested by {author}"
+		},
+		"command": {
+		  "title": "{commandName} command help",
+		  "list": "❯ **Command:** {h_name}\n❯ **Description:** {h_desc}\n❯ **Usage:** {h_use}\n❯ **Aliases:** {h_alias}\n❯ **Category:** {h_cat}"
+	  }
+	},
+	"utility": {
+	  "ping": {
+	    "description": "Checks the bot's ping (speed) response to the Discord server"
+	  },
+	  "uptime": {
+		"description": "Show bot uptime"
+	  },
+	  "clean": {
+	    "description": "Clean up message in the text channel.\n\n**IMPORTANT:** According to discord T.O.S,\nDiscord doesn't allow bots to purge `(bulk delete)` messages that are older than `14 days old`. You may or may not have seen other bots that will delete messages older than 14 days one at a time, it is unlikely that this will change unless and until Discord makes the feature available to us.",
+	    "command": {
+	      "success": ":white_check_mark: Deleted `{amount}` messages in `{time}ms`",
+	      "error": {
+	        "limitation": ":x: Due to Discord Limitations, cannot delete messages older than 14 days."
+	      },
+	      "invalid": {
+	        "character": "Please specify the amount of messages need to be delete.",
+	        "number": "Please select a number between `1-100`."
+	      }
+	    }
+	  }
+	},
+	"info": {
+	  "server": {
+	    "description": "Brief information about the server but does not include sensitive information"
+	  },
+	  "avatar": {
+	    "description": "Show information about photos of yourself or other members on the server.",
+	    "embed": {
+	      "mention": "**Requested by :** <@{author}>\n**Photo of :** <@{target}>",
+	      "self": "<@{author}> **photo**"
+	    }
+	  },
+    "invite": {
+	    "description": "Get bot invite link and add bot to your server.",
+	    "embed": "Click [here]({url}) to add <@{bot}> in your server !"
+	  }
+	},
+	"welcomer" : {
+	  "description": "Tell your friends that someone has joined the server by sending them a message.",
+	  "message": "Welcome to the server, Don't forget to read our rule",
+	  "title": "Welcome",
+	  "joinserver": "Joined to",
+	  "membercount": "Member of",
+	  "info": "**PREFERENCES**\n`Set Channel` Set welcomer channel\n`Set Message` Set Custom Message\n`Set Background` Set welcomer background\n`Set Color` Set welcomer text color\n`Set Font` Set welcomer font\n`Test Welcomer` Show welcomer preview\n`Cancel` Close setting",
+	  "setchannel": "**Current channel**\nchannel : {channel}\n\n**Please mention the channel you want to be set as welcomer channel.**\n\n**PERMISSION**\n`SEND_MESSAGE`\n`EMBED_LINK`\n\n`Cancel` Close setting\n`Back` Go to previous setting",
+	  "setchanneldone": "Welcomer channel has been set to <#{channel}>",
+	  "setmsg": "You can use your own custom message for a new comer.\n**CHARACTER LIMIT**\nMake sure the text is not exced the limit, character length was limited up to `1000` character and minimum character must be not lower than `20` character.\n**Guide for use mention on Rich Embed**.\n**Channel:** <#CHANNEL ID>\n**Member:** <@MEMBER ID>\n**Role:** <@&ROLE ID>\n**New Member** {user}\nOr you can use mention instead without puting the id.\n`Cancel` Close setting\n`Back` Go to previous setting",
+	  "setmsgdone": "Custom message has been changed!",
+	  "setbackground": "**FORMAT**\nImage must be in format `png` or `jpg`.\n**IMAGE**\nImage should be in URL in order to use. including `http` or `https` or `attachment` bot will take care your image carefully.\n**RESOLUTION**\nImage will be stretched up to `500 x 300` Pixel, so make sure use high res image with proportional dimension, if you trying to use image lower than `500 x 300` bot will decide to stretch and crop the image to match the background resolution with centered gravity.\n\n**Note : URL and ATTACHMENT is now support !**\n\n**Current Background :** {background}\n\n`Cancel` Close setting\n`Back` Go to previous setting",
+	  "setcolor": "**Current color**\nTitle   : {title}\nPrimary : {primary}\nAccent  : {accent}\n\n**NOTE : you have to change the color one by one, it's means you can't change them all AT ONCE!**\n\n**Change title color**\nExample : `title #fff`\n**Change primary color**\nExample : `primary #fff`\n**Change accent color**\nExample : `accent #fff000`\n**Other**\n`Cancel` Close setting\n`Back` Go to previous setting",
+	  "setaccentdone": "Accent color has been update!",
+	  "setprimarydone": "Primary color has been update!",
+	  "settitledone": "Title color has been update!",
+	  "setfont": "**CURRENT FONTS**\n{selected}\n\n`Cancel` Close setting\n`Back` Go to previous setting",
+	  "setfontdone": "Font was changed to {font}"
+	},
+	"goodbye": {
+	  "description": "Say goodbye message to member when they leave the server.",
+	  "message": "was leave the server!",
+	  "info": "**PREFERENCES**\n`Set Channel` Set goodbye channel\n`Set Message` Set custom message\n`Test Goodbye` Show goodbye preview\n`Cancel` Close setting",
+	  "setchannel": "**Current channel**\nchannel : {channel}\n\n**Please mention the channel you want to be set as goodbye channel.**\n\n**PERMISSION**\n`SEND_MESSAGE`\n`EMBED_LINK`\n\n`Cancel` Close setting\n`Back` Go to previous setting",
+	  "setchanneldone": "Goodbye channel has been set to <#{channel}>",
+	  "setmsg": "You can use your own custom message for embed.\n**CHARACTER LIMIT**\nMake sure the text is not exced the limit, character length was limited up to `1000` character and minimum character must be not lower than `20` character.\n**Guide for use mention on Rich Embed**.\n**Channel:** <#CHANNEL ID>\n**Member:** <@MEMBER ID>\n**Role:** <@&ROLE ID>\n**Member was leave:** {user}\nOr you can use mention instead without puting the id.\n`Cancel` Close setting\n`Back` Go to previous setting",
+	  "setmsgdone": "Custom message has been changed!"
+	},
+  "system": {
+    "level": {
+      "levelup":"GG <@{user}>, you just advanced to level `{level}` !"
+    }
+  },
+	"common": {
+	 "cooldown": "please wait `{h}{m}{s}` to using the `{name}` command again.",
+	 "errorCommand": "There was an error executing that command.",
+	 "commandTimeout": "Took too long for command to complete.",
+	 "error": "Something went wrong !",
+	 "notAvailable": "Not available.",
+	 "character": {
+	   "minimum": "Character is too short.",
+	   "maksimum": "Maximum character has exceed."
+	 },
+	 "command": {
+	   "permissions": {
+	    "denied": "You don't have permission to use this command!",
+	    "missing": "Bot need permission {perm}"
+	   },
+	   "multiple": "Cannot play game twice, please complete another game, you can only run the game at a time.",
+	   "none": "None",
+	   "nousage": "No usage",
+	   "nodescription": "No Description provided.",
+	   "invalid": "Invalid Command or Argument.",
+	   "helper": {
+	     "global": "Do `{prefix}help` for the list of the commands.",
+	     "current": "Use `{prefix}help {command}` for this current command help."
+	   }
+	 }
+	},
+	"timeconvert": {
+  	"hour": "{h} hours, ",
+  	"minute": "{m} minutes, ",
+  	"second": "{s} seconds"
+	},
+	"notset": "Not set",
+	"setchannel": "Set Channel",
+	"setmessage": "Set Message",
+	"setbackground": "Set Background",
+	"setcolor": "Set Color",
+	"setfont": "Set Font",
+	"testwelcomer": "Test Welcomer",
+	"testgoodbye": "Test Goodbye",
+	"apply": "Apply",
+	"add" : "Add",
+	"delete": "Delete",
+	"enable": "Enable",
+	"disable": "Disable",
+	"enabled": "Enabled",
+	"disabled": "Disabled",
+	"quit": "Quit",
+	"exit": "Exit",
+	"cancel": "Cancel",
+	"back": "Back",
+	"prev": "Prev",
+	"next": "Next",
+	"forfeit": "Forfeit",
+	"noreason": "No reason",
+	"verification": "Verification",
+	"badwords": "Badwords",
+	"infraction": "Infraction",
+	"punishment": "Punishment",
+	"log": "Log"
+}

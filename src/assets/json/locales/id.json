@@ -1,0 +1,543 @@
+{
+  "misc": {
+    "rr": {
+      "description": "Tambahkan reaksi dengan peran ketika pengguna menambahkan reaksi.",
+      "info": "**Keterangan:**\n{description}\n**Reaksi:**\n{field}\n\n**Tambahkan deskripsi**\n`desc` <keterangan>\n`contoh:` desc bereaksi untuk mendapatkan peran\n**Tambahkan Reaksi dan Peran**\n`react <emoji> <@role>`\n`contoh:` react 😁 @role\n**Mengirim Reaksi ke saluran tertentu**\n`send <#channel>`\n`Cancel` Tutup pengaturan"
+    },
+    "ticket": {
+      "description": "Ini memungkinkan orang membuat tiket dengan mudah, dan memberi tahu mereka jenis tiket apa yang mereka buat. Setiap tiket yang dibuat oleh pengguna dapat memiliki kategori yang berbeda tergantung pada dukungannya. Jika Anda membuat kategori, maka mereka tahu persis kategori apa yang sesuai dengan kebutuhan mereka.",
+      "setting": "**PENGATURAN SAAT INI**\n{current}\n`Channel` Setel saluran tiket terbuka\n`Category` Tetapkan kategori tiket\n`Moderator` Tetapkan peran moderator\n`Batal` Tutup pengaturan",
+      "channel": "**Saluran ini akan di set sebagai default open ticket, member yang ingin tiket harus datang kesana, memang dengan role yang ditentukan boleh datang.**",
+      "category": "**Kategori harus kosong tidak mengandung saluran apa pun di dalamnya.\nKategori ini akan digunakan ketika orang membuka tiket.**",
+      "moderator": "**Peran ini memiliki kontrol penuh untuk mengelola sistem tiket di server tetapi tidak untuk mengubah pengaturan tiket.**",
+      "notset": "Tiket sistem belum di konfigurasi dengan benar diperlukan pengaturan {value}",
+      "notinchannel": "Kamu tidak berada di saluran buka tiket !",
+      "usernotexist": "Anggota tidak terdaftar pada ticket.",
+      "userremoved": "Anggota sudah di hapus dari tiket.",
+      "useradded": "Anggota telah ditambahkan ke tiket.",
+      "useralreadyexist": "Anggota sudah ada.",
+      "topic": "Topic : {topic}\n\n`Kembali` Buka pengaturan sebelumnya\n`Batal` Tutup pengaturan\n`Tambah <kata>` Tambahkan satu atau beberapa kata ke daftar, pisahkan kata dengan koma\ncontoh 1 : `Tambah donasi,permainan,lainnya`\ncontoh 2 : `Tambah permainan`\n`Hapus <topik>` Hapus topic dari daftar satu per topik\ncontoh : `Hapus permainan`\n`Terapkan` Terapkan perubahan"
+    },
+    "suggestion": {
+      "description": "Berikan saran di komunitas untuk hal-hal tertentu menurut penghitungan suara",
+      "info": "`Saat ini :` {channel}\n\n**Sebutkan channel yang ingin dijadikan channel saran**\n\n`Keluar` Tutup pengaturan",
+      "notinchannel": "Kamu sedang tidak ada di saluran saran sekarang !"
+    }
+  },
+  "moderation": {
+    "setting": {
+      "description": "Setel moderasi untuk server seperti riwayat modifikasi,pemblokiran,dan lain-lain",
+      "info": "**PREFERENSI**\n`Verifikasi` Setel saluran verifikasi untuk member menunggu persetujuan\n`Riwayat` Setel saluran riwayat\n`Kata Kotor` Atur daftar Kata kotor untuk memblokir kata\n`Pelanggaran` Tetapkan hasil pelanggaran, maksimal pelanggaran\n`Batal` Tutup pengaturan"
+    },
+    "verification" : {
+  	  "info": "**Saluran saat ini :** {channel}\n`Kembali` Buka pengaturan sebelumnya\n`Batal` Tutup pengaturan",
+  	  "done": "Saluran verifikasi telah di atur ke <#{channel}>"
+  	},
+    "infraction": {
+      "main": "**Hukuman :** {punishment}\n**Pelanggaran :** {total}\n\n`Kembali` Buka pengaturan sebelumnya\n`Batal` Tutup pengaturan",
+      "punishment": "**Pilih tindakan yang harus digunakan untuk pelanggaran**\n\n`Kembali` Buka pengaturan sebelumnya\n`Batal` Tutup pengaturan",
+      "maxinfract": "**Masukkan jumlah pelanggaran yang akan diambil**\n\n`Kembali` Buka pengaturan sebelumnya\n`Batal` Tutup pengaturan"
+    },
+    "badword": {
+      "info": "Kata diblokir : {wordblock}\nDaftar kata : {wordlist}\n\n`Kembali` Buka pengaturan sebelumnya\n`Batal` Tutup pengaturan\n`Aktifkan` Aktifkan pemblokiran kata\n`Matikan` Matikan pemblokiran kata\n`Tambah <kata>` Tambahkan kata ke daftar, pisahkan kata dengan koma\n`Hapus <kata>` Hapus kata dari daftar satu per kata\n`Terapkan` Terapkan perubahan",
+      "detected": "**PERINGATAN: KATA KOTOR !**"
+    },
+    "log" : {
+  	  "info": "**Saluran saat ini :** {channel}\n`Kembali` Buka pengaturan sebelumnya\n`Batal` Tutup pengaturan",
+  	  "done": "Saluran riwayat telah di atur ke <#{channel}>"
+  	},
+    "warn": {
+      "description": "Beri peringatan kepada member yang melanggar peraturan dalam server.",
+      "cantwarn": "Kamu gak bisa memberi peringatan kepada <@{user}>!"
+    },
+    "unmute" : {
+      "description": "Kembalikan member setelah dibisukan.",
+      "cantunmute": "<@{user}> tidak di busukan sebelum nya",
+      "notmuted": "Anggota saat ini tidak di bisukan sebelum nya !",
+      "notfound": "Tidak ada anggota yang di bisukan untuk sekarang ini"
+    },
+    "mute" : {
+      "description": "Bisukan member dari server.",
+      "cantmute": "Kamu gak bisa membisukan <@{user}>!",
+      "mutedtwice": "Kamu tidak dapat membisukan anggota dua kali berturut-turut !"
+    },
+    "kick": {
+      "description": "Keluarkan member dari server.",
+      "cantkick": "Bot tidak bisa mengeluarkan <@{user}>!"
+    },
+    "ban": {
+      "description": "Blok member dari server.",
+      "cantban": "Bot tidak bisa memblokir <@{user}>!",
+      "bantwice": "Kamu tidak dapat mencekal anggota dua kali berturut-turut !"
+    },
+    "unban": {
+      "description": "Buka member yang di blokir dari server.",
+      "cantunban": "Bot tidak bisa membuka blokir pengguna ini.\nAnggota : {user}",
+      "notfound": "Tidak ada anggota yang di banned sekarang ini"
+    }
+  },
+  "economy": {
+    "setting": {
+      "description": "Atur sistem peringkat di server Anda seperti poin xp, pesan naik peringkat, kartu papan peringkat, kartu peringkat untuk server",
+      "info": "**PENGATURAN SAAT INI**\n\n**Level System:** {levelsys}\n**Level Point** {levelpoint}\n**Rank Card:** {rankcard}\n**Level Message:** {levelmessage}",
+      "levelsys": "Kamu bisa mematikan sistem level, tetapi diaktifkan secara default.",
+      "levelmsg": "**PENGGUNAAN**\n**User :** {user}\n**Level :** {lvl}\n**Contoh :** GG {user} you just advanced to level {lvl}\n`Back` Buka pengaturan sebelumnya\n`Cancel` Tutup pengaturan",
+      "levelchannel": {
+        "info": "\n**Channel Saat ini :** {channel}\n\n\n`Back` Buka pengaturan sebelumnya\n`Cancel` Tutup pengaturan",
+        "done": " Saluran telah di setel ke{channel}"
+      },
+      "levelpoint": "Mengatur berapa banyak xp untuk mendapatkan untuk naik level.\n`Back` Buka pengaturan sebelumnya\n`Cancel` Tutup pengaturan",
+      "rankcard": "`Font` Ubah font\n`Background` Atur gambar latar sendiri",
+      "rankfont": "**Font yang digunakan saat ini**\n{selected}",
+      "rankbackground": "**PILIHAN**\nATTACHMENT: kirim lampiran gambar kamu\nURL: kirim link gambar\n`Back` Buka pengaturan sebelumnya\n`Cancel` Tutup pengaturan"
+    },
+    "give-xp": {
+      "description": "Berikan sebagian xp kamu ke member yang juga ada di leaderboard server, tapi jika tidak ada di leaderboard server tidak akan berfungsi jika member tersebut belum mendapat poin di dalam game. Itu berarti mereka tidak akan terdaftar.",
+      "status": {
+        "passed": "<@{from}> memberi {amount} xp kepada <@{to}>",
+        "amount": "Anda tidak memiliki cukup xp untuk diberikan kepada seseorang. Setidaknya ada satu solusi, coba kumpulkan lebih banyak xp.",
+        "user": "Pengguna <@{target}> tidak terdaftar di papan peringkat saat ini. Jadi, beri tahu mereka untuk memainkan game.",
+        "server": "Server **{server}** tidak terdaftar di papan peringkat. Artinya sama sekali tidak ada yang bermain game, jadi mereka tidak akan terdaftar di daftar kami, termasuk server juga."
+      }
+    },
+    "rank": {
+      "description": "Dapatkan informasi terkini tentang status peringkat kamu/orang lain saat ini.",
+      "canvas": {
+        "statistic": "Statistik",
+        "last_played": "Game Terkini",
+        "rank": "Peringkat",
+        "experience": "Pengalaman"
+      }
+    },
+    "leaderboard": {
+      "description": "lihat informasi terbaru tentang papan peringkat 10 besar teratas secara langsung di dalam server."
+    }
+  },
+  "info": {
+    "avatar": {
+      "description": "Tampilkan avatar kamu saat ini."
+    }
+  },
+  "animal": {
+    "cat": {
+      "description": "Dapatkan gambar hewan kucing secara aacak."
+    },
+    "dog": {
+      "description": "Dapatkan gambar hewan anjing secara acak."
+    },
+    "fox": {
+      "description": "Dapatkan gambar hewan rubah secara acak."
+    },
+    "duck": {
+      "description": "Dapatkan gambar hewan bebek secara acak."
+    },
+    "chicken": {
+      "description": "Dapatkan gambar hewan ayam secara acak."
+    },
+    "bird": {
+      "description": "Dapatkan gambar hewan burung secara acak."
+    },
+    "monkey": {
+      "description": "Dapatkan gambar hewan kera secara acak."
+    }
+  },
+  "role-play": {
+    "breakup": {
+      "description": "Putuskan hubungan dengan seseorang."
+    },
+    "jail": {
+      "description": "Masukkan setiap anggota ke dalam penjara.",
+      "embed": "***<@{target}> masuk penjara !***"
+    },
+    "rip": {
+      "description": "Tag orang yang kamu mau jadi R.I.P untuk di taruh foto profilnya di kuburan, dengan mention nama member yang dituju."
+    },
+    "match": {
+      "description": "Tunjukkan pada mereka bahwa kamu serasi dengan seseorang yang telah kamu sebutkan di obrolan.",
+      "canvas": {
+        "header": "Cocok!",
+        "description": "Kamu dan {target} saling menyukai."
+      }
+    }
+  },
+  "fun": {
+    "cry": {
+      "description": "Biarkan mereka tahu bahwa Anda merasa sedih atau mengalami hari yang buruk, panggil saja perintah ini setelahnya",
+      "embed": {
+        "mention": "***<@{author}> menangis karena <@{target}>***",
+        "self": "***<@{author}> sedang sedih.***"
+      }
+    },
+    "angry": {
+      "description": "Meme ngambek secara acak untuk anggota yang telah Anda sebutkan.",
+      "embed": "***<@{author}> ngambek sama <@{target}>***"
+    },
+    "hug": {
+      "description": "Berikan pelukan kepada anggota yang menurut kamu spesial bagi kamu. Sebenarnya ini bukan pelukan beneran, tapi kamu bisa melakukannya secara langsung lewat internet kan.",
+      "embed": "***<@{author}> beri pelukan untuk <@{target}>***"
+    },
+    "clap": {
+      "description": "Kirim reaksi tepuk tangan ke anggota tertentu itu benar-benar memberikan tepuk tangan kepada orang-orang. Jangan lupa untuk menyebutkan mereka dalam perintah.",
+      "embed": {
+        "mention": "***<@{author}> kasih tepuk tangan untuk <@{target}>***",
+        "self": "***<@{author}> bertepuk tangan.***"
+      }
+    },
+    "slap": {
+      "description": "Tampar mereka secara online kepada anggota tertentu dengan menyebutkan nama mereka.",
+      "embed": "***<@{author}> menampar <@{target}>***"
+    },
+    "kiss": {
+      "description": "Cium anggota dengan menyebutkan mereka di obrolan, itu yang nanti nya akan memberikan gambar anime acak untuk mereka.\n*Catatan: Semua gif anime adalah milik pengguna dari `TENOR`*",
+      "embed": "***<@{author}> mencium <@{target}>***"
+    },
+    "meme": {
+      "description": "Dapatkan meme acak dengan meme berkualitas baik dari subreddit seperti lucu, panas, viral, wallpaper dll."
+    }
+  },
+  "games": {
+    "tod": {
+      "description": "Cara mainnya pemain diberi pilihan jujur atau tantangan yang ditentukan oleh pemain lain. Pemain terpilih akan memilih pertanyaan atau dare yang nanti akan diberikan kepada pemain lainnya. Permainan dimainkan pada saat player berada pada saluran suara.",
+      "command": {
+        "lobby": "**PASTIKAN SEMUA PEMAIN BERADA DALAM SALURAN SUARA**.\n\n**Pemain Join**\n{player}",
+        "ingame" : {
+          "bottle_roll": "Sedang memutar botol..",
+          "bottle_done": "**Putaran telah berhenti dan botol mengarah ke antara 2 orang yaitu\n<@{player1}> Kamu akan memberikan **TRUTH OR DARE** kepada <@{player2}>\n\n <@{player1}> Silahkan berikan pertanyaan kamu lalu pilih `TRUTH OR DARE`",
+          "tombol_khusus": "Tombol ini hanya untuk <@{user}>",
+          "ask" : "<@{user}> **Pilih jawabanmu !**",
+          "truth": "<@{user}> telah memilih TRUTH!",
+          "dare": "<@{user}> telah memilih DARE!",
+          "canceled": "Game Berakhir!"
+        }
+      }
+    },
+    "tg": {
+      "description": "Tebak Gambar adalah dimana kamu harus menebak gambar yang di berikan oleh bot dengan dalam waktu yang telah di tentukan.",
+      "command": {
+        "ingame": {
+          "question": "\nStatus terkini :\n{players}\n",
+          "wronganswer": "Jawaban yang salah !\nAnda sudah `{strikes}` kali salah !",
+          "alreadydead": "Kamu sudah kalah!",
+          "gameover": "\nPermainan telah berakhir !\n\nPemenang:\n{win}\n\nkalah:\n{lose}",
+          "rounds": "Ronde {round} dari {maxround} level {level}"
+        }
+      }
+    },
+	"sk" : {
+	  "description": "Sambung kata atau di singkat SK adalah game yang mengharuskan kamu menyambung ejaan terakhir dari sebuah yang di berikan oleh bot",
+      "command": {
+        "ingame": {
+          "question": "{content}\nStats :\n{players}\n\n\nLanjutkan kata dengan awalan `{awalan}` | acak kata ketik `roll`",
+          "alreadydead": "Kamu sudah kalah!",
+          "gameover": "\nPermainan telah berakhir !\n\nPemenang:\n{win}\n\nkalah:\n{lose}",
+          "rounds": "Ronde {round}"
+        }
+      }
+	},
+    "C4": {
+      "description": "Connect Four adalah sebuah permainan strategi tradisional yang dimainkan oleh dua orang pemain dengan menggunakan papan berlubang.",
+      "command": {
+        "ingame": {
+          "forfeit": "⛔ <@{player}> telah kabur dari game!",
+          "win": "🎉 <@{player}> telah memenangkan game connect four dengan hadiah `{rewards}xp` !",
+          "aiwin": "🎉 <@{player}> telah memenangkan permainan !",
+          "draw": "🏳️ Game telah usai dengan imbang!",
+          "isturn": "giliran!",
+          "player": "**{side}** <@{player}> {turn}",
+          "turn": "{player1}\n{player2}",
+          "gameover": "🕐 Game sudah selesai!",
+          "ilegalMove": "<@{player}> kamu tidak bisa menambahkan chip lagi di kolom ini, coba lagi !",
+          "notturn": "<@{player}> Itu bukan giliranmu!"
+        }
+      }
+    },
+    "math": {
+      "description": "Math dalam bahasa inggris, yang arti nya matematika adalah game asah otak dalam operasi penjumlahan, pengurangan, perkalian, pembagian.",
+      "addition": "**PENJUMLAHAN**\n{l} + {r} = ?",
+      "multiplication": "**PENGURANGAN**\n{l} - {r} = ?",
+      "substraction": "**PERKALIAN**\n{l} x {r} = ?",
+      "division": "**PEMBAGIAN**\n{l} : {r} = ?",
+      "ingame": {
+        "answer": "Benar! jawaban nya adalah `{h}`\nNilai kamu `{s}`",
+        "timeout": "Yah, waktu sudah habis!\nNilai kamu `{s}`",
+        "wrong": "Yah, jawaban kamu salah!\nNilai kamu `{s}`",
+        "round": "Yay, kamu telah menyelesaikan semua ronde!\nNilai kamu `{s}` selamat!"
+      }
+    },
+    "scramble": {
+      "description": "Acak Kata adalah permainan kosakata yang menantang untuk anak-anak. Game ini dirancang untuk membantu anak-anak melatih ejaan mereka dan mempelajari kata-kata baru. ... Mereka harus mengatur ulang huruf yang diberikan untuk membentuk kata. Game ini adalah cara yang bagus untuk membantu anak-anak membangun, menguji, dan meningkatkan keterampilan kosa kata dan ejaan mereka.",
+      "command": {
+        "ingame": {
+          "clue": "PETUNJUK: {clue}",
+          "gameover": "Ronde telah di selesaikan!\n\nPemenang:\n {win}\n\nKalah:\n{lose}",
+          "timeout": "Waktu sudah habis!\n\nPemenang:\n{win}\n\nKalah:\n{lose}",
+          "answer": "GG, <@{player}> kamu baru saja menyelesaikan babak ini!",
+          "rounds": "Ronde {round} dari {maxround}"
+        }
+      }
+    },
+    "hangman": {
+      "description": "Hangman pada dasar nya adalah permainan menebak huruf dengan kertas dan pensil untuk dua pemain atau lebih. Satu pemain memikirkan sebuah kata, frase atau kalimat dan yang lain mencoba menebaknya dengan menyarankan huruf dalam jumlah tertentu.",
+      "command": {
+        "ingame": {
+          "clue": "PETUNJUK: {clue}",
+          "gameover": "Game telah berakhir!\n\nMenang:\n {win}\n\nKalah:\n{lose}",
+          "answered": "Huruf tadi sudah di tebak !",
+          "rounds": "Ronde {round} dari {maxround}"
+        }
+      }
+    },
+    "guesscolor": {
+      "description": "Tebak Warna adalah single player game populer di indonesia, kamu harus menebak warna dengan cepat dalam waktu yang singkat!",
+      "color": [
+    	  "MERAH",
+    	  "KUNING",
+    	  "HIJAU",
+    	  "BIRU",
+    	  "UNGU",
+    	  "JINGGA",
+    	  "PUTIH",
+    	  "HITAM",
+    	  "MERAH MUDA",
+    	  "ABU-ABU",
+    	  "COKELAT"
+	    ],
+	    "question": "**Apakah warna {name} ini benar ?**",
+	    "passed": "Jawaban kamu benar!\nlanjut ke Ronde {round}",
+      "timeout": "Waktu kamu sudah habis!, game berakhir!",
+      "win": "Jawaban kamu benar!\nKamu telah menyelesaikan semua ronde, selamat ya!\n\nHadiah {point}xp",
+      "lose": "Yah <@{player}>, jawaban kamu salah, tapi game sudah berakhir!",
+      "rounds": "Ronde {round) dari {maxround}",
+      "no": "TIDAK",
+      "yes": "IYA"
+    },
+    "slots": {
+      "description": "Uji keberuntungan kamu hari ini dengan bermain game slot, kamu akan mendapatkan hadiah yang sesuai buat kamu, tanpa imbalan!",
+      "win": "{result}\nWah! Kamu memenangkan **XP+{prize}** selamat buat keberuntunganmu hari ini!",
+      "lose": "{result}\nKamu belum beruntung, coba lagi nanti!"
+    },
+    "xoxo": {
+      "description": "Mainkan game tadisional tic tac toe atau XOXO bersama teman.",
+      "command": {
+        "ingame": {
+          "forfeit": "⛔ <@{player}> telah kabur dari game!",
+          "win": "🎉 <@{player}> telah memenangkan game XOXO",
+          "rewards": " dengan hadiah `{rewards}xp`",
+          "draw": "🏳️ Game telah usai dengan imbang!",
+          "isturn": "giliran!",
+          "player": "**{side}** <@{player}> {turn}",
+          "turn": "{player1}\n{player2}",
+          "gameover": "🕐 Game sudah selesai!",
+          "notturn": "<@{player}> Itu bukan giliranmu!"
+        }
+      }
+    },
+    "quiz": {
+      "description": "Mainkan jawaban dan pertanyaan dengan pilihan ganda yang membuat Anda lebih berwawasan.",
+      "command": {
+        "ingame": {
+          "question": "{content}\nStatus terkini :\n{players}\n",
+          "wronganswer": "Jawaban yang salah !\nAnda sudah `{strikes}` kali salah !",
+          "alreadydead": "Kamu sudah kalah!",
+          "gameover": "\nPermainan telah berakhir !\n\nPemenang:\n{win}\n\nkalah:\n{lose}",
+          "rounds": "Ronde {round} dari {maxround}"
+        }
+      }
+    },
+    "abc": {
+      "description": "Mainkan jawaban dan pertanyaan dengan pilihan ganda yang membuat Anda lebih berwawasan.",
+      "command": {
+        "ingame": {
+          "question": "{content}\nStatus terkini :\n{players}\n",
+          "wronganswer": "Jawaban yang salah !\nAnda sudah `{strikes}` kali salah !",
+          "alreadydead": "Kamu sudah kalah!",
+          "gameover": "\nPermainan telah berakhir !\n\nPemenang:\n{win}\n\nkalah:\n{lose}",
+          "rounds": "Ronde {round} dari {maxround}"
+        }
+      }
+    },
+    "lobby": {
+      "usage": "Informasi :\n`start` mulai permainan\n`join` gabung ke permainan\n`exit` membatalkan game\n`add bot` undang bot untuk main dengan AI\n`add <@mention>` undang teman ke dalam game\n**Catatan: pertimbangkan untuk meminta mereka untuk main game ini**\n",
+      "players": "{content}\n\n{players}\n\n",
+      "joined": "<@{playerid}> `{labels}`",
+      "alreadyjoin": "Heh, <@{playerid}> sudah bergabung !",
+      "noenoughplayer": "Tidak cukup pemain !",
+      "exit": "Permainan dibatalkan"
+    },
+    "locale": {
+      "language": "Silakan pilih bahasa permainan\n",
+      "notlanguage":"Heh, <@{playerid}> bahasa tidak ditemukan",
+      "playerchoosed": "<@{playerid}>, memilih `{text}` sebagai bahasa permainan"
+    },
+    "notjoin": "Kamu tidak berada di dalam game `join` terlebih dahulu atau kamu di tambahkan oleh host!",
+	  "notplayer": "Maaf kamu bukan pemain di dalam game ini!"
+  },
+	"language": {
+		"description": "Ganti bahasa bot saat ini.",
+		"info": "Bahasa saat ini `{currentlang}`\nBalas chat ini dengan kode negara anda untuk mengganti bahasa.\n`exit` untuk keluar dari pengaturan bahasa\nLihat pada daftar kode bahasa yang tersedia saat ini : {alllang}",
+		"finish": "Bahasa di ubah menjadi `{locale}`",
+		"notfound": "Tidak ada bahasa yang mendukung dengan `{message}`."
+	},
+	"channel": {
+		"description": "Pengaturan saluran untuk menerima motivasi harian.",
+		"info": "Silahkan mention channel yang ingin di kirimkan motivasi.\n`exit` untuk keluar dari pengaturan channel.",
+		"finish": "Oke motivasi akan di kirim secara terjadwal sesuai dengan konfigurasi ini.\nServer = {servername}\nChannel = {chids}"
+	},
+	"motivate": {
+		"description": "Kirim motivasi di saluran saat ini secara langsung.",
+		"credit": "Motivasi oleh {author}"
+	},
+	"submit": {
+		"description": "Buat kata motivasi sendiri.",
+		"info": "**PERHATIAN**.\nKetika kamu mengajukan untuk menambahkan kata-kata kamu, kamu tidak di izinkan untuk menggunakan kata motivasi dari google atau apa pun hanya gunakan karya kamu sendiri ! 🤔\nSilahkan balas chat ini dengan kata-kata kamu ya.\nMinimal `50` karakter dan Maksimal `3000` karakter.\n`exit` untuk membatalkan pengiriman.",
+		"finish": "Yay.<@{author}> motivasi kamu berhasil di tambahkan ke daftar motivasi harian 📝"
+	},
+	"prefix": {
+	  "description": "Setel prefix untuk perintah bot.",
+	  "info": "Prefix bawaan saat ini adalah `{curfix}`\nSilahkan masukan prefix yang baru.\n`exit` untuk membatalkan pengaturan prefix.",
+	  "finish": "Prefix di ubah menjadi `{prefix}`",
+	  "equal": "Prefix yang baru tidak boleh sama seperti sebelumnya."
+	},
+	"help": {
+		"description": "Tampilkan semua perintah dan deskripsi.",
+		"info": "Prefix bot adalah **{prefix}**\n`{prefix}help` Daftar perintah\n`{prefix}help <command>` Bantuan perintah",
+		"page": "halaman {page} | Batal : Tutup bantuan",
+		"embed": {
+  		"author": "{author} Bantuan",
+	  	"footer": "Diminta oleh {author}"
+		},
+		"command": {
+		  "title": "{commandName} bantuan perintah",
+		  "list": "❯ **Perintah:** {h_name}\n❯ **Keterangan:** {h_desc}\n❯ **Penggunaan:** {h_use}\n❯ **Alias:** {h_alias}\n❯ **Kategori:** {h_cat}"
+	  }
+	},
+	"utility": {
+	  "ping": {
+	    "description": "Memeriksa ping (kecepatan) tanggapan bot ke server Discord."
+	  },
+	  "uptime": {
+	    "description": "Tampilkan waktu aktif bot"
+	  },
+	  "clean": {
+	    "description": "Bersihkan pesan di saluran teks.\n\n**PENTING:** Berdasarkan discord T.O.S,\nDiscord tidak mengizinkan bot untuk menghapus pesan `(bulk delete)` yang lebih lama dari `14 hari`. Mungkin tidak pernah melihat bot lain yang dapat menghapus pesan yang lebih lama dari 14 hari satu per satu.",
+	    "command": {
+	      "success": ":white_check_mark: Terhapus `{amount}` pesan dalam `{time}ms`",
+	      "error": {
+	        "limitation": ":x: Karena keterbatasan Discord, tidak dapat menghapus pesan yang lebih lama dari 14 hari."
+	      },
+	      "invalid": {
+	        "character": "Harap tentukan jumlah pesan yang perlu di hapus.",
+	        "number": "Silakan pilih angka antara `1-100`."
+	      }
+	    }
+	  }
+	},
+	"info": {
+	  "server": {
+	    "description": "Informasi singkat tentang server namun tidak termasuk informasi yang sensitif"
+	  },
+	  "avatar": {
+	    "description": "Tampilkan informasi tentang foto dirimu atau member lain di dalam server.",
+	    "embed": {
+	      "mention": "**Foto dari** <@{target}>\nDiminta oleh: <@{author}>",
+	      "self": "<@{author}> **foto**"
+	    }
+	  },
+    "invite": {
+	    "description": "Minta tautan undangan bot dan tambahkan bot ke server.",
+	    "embed": "Klik [disini]({url}) untuk menambahkan <@{bot}> kedalam server kamu !"
+	  }
+	},
+	"welcomer": {
+	  "description": "Beritahu teman kamu bahwa seseorang telah gabung ke server dengan mengirimkan pesan kepada mereka yang baru gabung.",
+	  "message": "Selamat datang di server kami, Jangan lupa untuk membaca peraturan kami!",
+	  "title": "Selamat Datang",
+	  "joinserver": "Bergabung ke",
+	  "membercount": "Member ke",
+	  "info": "**PREFERENSI**\n`Setel Saluran` Setel saluran selamat datang\n`Setel Pesan` Setel Pesan Kustom\n`Setel Latar` Set welcomer background\n`Setel Warna` Setel warna teks selamat datang\n`Setel Huruf` Setel jenis huruf\n`Tes Selamat Datang` Tampilkan pratinjau selamat datang\n`Batal` Tutup pengaturan",
+	  "setchannel": "**Saluran saat ini**\nsaluran : {channel}\n\n**Sebutkan saluran yang ingin Anda tetapkan sebagai saluran selamat datang.**\n\n**IZIN**\n`SEND_MESSAGE`\n`EMBED_LINK`\n\n`Batal` Tutup pengaturan\n`Kembali` Buka pengaturan sebelumnya",
+	  "setchanneldone": "Saluran selamat datang telah disetel ke <#{channel}>",
+	  "setmsg": "Anda dapat menggunakan pesan khusus Anda sendiri untuk pendatang baru.\n**BATAS KARAKTER**\nPastikan teks tidak melebihi batas, panjang karakter dibatasi hingga `1000` karakter dan karakter minimum tidak boleh lebih rendah dari `20` karakter.\n**Panduan penggunaan disebutkan di Rich Embed**.\n**Saluran:** <#CHANNEL ID>\n**Anggota:** <@MEMBER ID>\n**Peran:** <@&ROLE ID>\n**Member Baru:** {user}\nAtau kamu dapat menggunakan sebutan sebagai gantinya tanpa memasukkan id.\n`Batal` Tutup pengaturan\n`Kembali` Buka pengaturan sebelumnya",
+	  "setmsgdone": "Pesan khusus telah diubah!",
+	  "setbackground": "**FORMAT**\nGambar harus dalam format `png` or `jpg`.\n**GAMBAR**\nGambar harus dalam URL untuk digunakan. termasuk `http` atau `https` atau `attachment` bot akan menjaga gambar kamu dengan hati-hati.\n**RESOLUSI**\nGambar akan diregangkan hingga `500 x 300` Piksel, jadi pastikan menggunakan gambar beresolusi tinggi dengan dimensi proporsional, jika kamu mencoba menggunakan gambar yang lebih rendah dari `500 x 300` bot akan memutuskan untuk meregangkan dan memotong gambar agar sesuai dengan resolusi latar belakang dengan gravitasi terpusat.\n\n**Catatan: URL dan LAMPIRAN sekarang mendukung !**\n\n**Latar Belakang Saat Ini :** {background}\n\n`Batal` Tutup pengaturan\n`Kembali` Buka pengaturan sebelumnya",
+	  "setcolor": "**Warna saat ini**\nJudul   : {title}\nUtama : {primary}\nAksen  : {accent}\n\n**CATATAN : Kamu harus mengubah warna satu per satu, itu berarti kamu tidak dapat mengubah semuanya SEKALIGUS!**\n\n**Ubah warna judul**\nContoh : `title #fff`\n**Ubah warna utama**\nExample : `primary #fff`\n**Ubah warna aksen**\nContoh : `accent #fff000`\n**Lainnya**\n`Batal` Tutup pengaturan\n`Kembali` Buka pengaturan sebelumnya",
+	  "setaccentdone": "Warna aksen telah diperbarui!",
+	  "setprimarydone": "Warna utama telah diperbarui!",
+	  "settitledone": "Warna judul telah diperbarui!",
+	  "setfont": "**FONT SAAT INI**\n{selected}\n\n`Batal` Tutup pengaturan\n`Kembali` Buka pengaturan sebelumnya",
+	  "setfontdone": "Huruf diubah menjadi {font}"
+	},
+	"goodbye": {
+	  "description": "Ucapkan selamat tinggal pesan kepada anggota ketika mereka meninggalkan server.",
+	  "message": "telah meninggalkan server!",
+	  "info": "**PREFERENSI**\n`Setel Saluran` Setel saluran selamat tinggal\n`Setel Pesan` Setel pesan khusus\n`Tes Selamat tinggal` Tampilkan pratinjau selamat tinggal\n`Batal` Tutup pengaturan",
+	  "setchannel": "**Saluran saat ini**\nsaluran : {channel}\n\n**Sebutkan saluran yang ingin kamu tetapkan sebagai saluran selamat tinggal.**\n\n**PERMISSION**\n`SEND_MESSAGE`\n`EMBED_LINK`\n\n`Batal` Tutup pengaturan\n`Kembali` Buka pengaturan sebelumnya",
+	  "setchanneldone": "Saluran selamat tinggal telah disetel ke <#{channel}>",
+	  "setmsg": "Kamu dapat menggunakan pesan khusus sendiri untuk disematkan.\n**BATAS KARAKTER**\nPastikan teks tidak melebihi batas, panjang karakter dibatasi hingga `1000` karakter dan karakter minimum tidak boleh lebih rendah dari `20` karakter.\n**Panduan penggunaan mention pada Rich Embed**.\n**Channel:** <#CHANNEL ID>\n**Member:** <@MEMBER ID>\n**Role:** <@&ROLE ID>\n**Member yang keluar:** {user}\nAtau kamu dapat menggunakan sebutan sebagai gantinya tanpa memasukkan id.\n`Batal` Tutup pengaturan\n`Kembali` Buka pengaturan sebelumnya",
+	  "setmsgdone": "Pesan khusus telah diubah!"
+	},
+  "system": {
+    "level": {
+      "levelup":"GG <@{user}>, kamu baru saja naik ke level `{level}` !"
+    }
+  },
+	"common": {
+	  "cooldown": "Harap tunggu `{h}{m}{s}` untuk menggunakan kembali perintah `{name}`.",
+	  "errorCommand": "Terjadi kesalahan saat menjalankan perintah itu.",
+	  "commandTimeout": "Terlalu lama untuk menyelesaikan perintah.",
+	  "error": "Terjadi kesalahan !",
+	  "notAvailable": "Tidak tersedia.",
+	  "character": {
+	    "minimum": "Karakter terlalu pendek.",
+	    "maksimum": "Paniang karakter telah melebihi."
+	  },
+	  "command": {
+	    "permissions": {
+	      "denied": "Kamu tidak memiliki izin untuk menggunakan perintah ini!",
+	      "missing": "Bot membutuhkan izin {perm}"
+	    },
+	    "multiple": "Tidak dapat memainkan game dua kali sekaligus, selesaikan game lain, kamu hanya dapat menjalankan game dalam satu waktu.",
+	    "none": "Tidak ada",
+	    "nousage": "Tidak ada penggunaan",
+	    "nodescription": "Tidak ada deskripsi yang disediakan.",
+	    "invalid": "Perintah atau argumen tidak valid.",
+	    "helper": {
+	      "global": "Pakai `{prefix}help` untuk daftar perintah.",
+	      "current": "Gunakan `{prefix}help {command}` untuk melihat bantuan perintah saat ini."
+	    }
+	  }
+	},
+	"timeconvert": {
+  	"hour": "{h} jam, ",
+  	"minute": "{m} menit, ",
+  	"second": "{s} detik"
+	},
+	"notset": "Tidak diatur",
+	"setchannel": "Setel Saluran",
+	"setmessage": "Setel Pesan",
+	"setbackground": "Setel Latar",
+	"setcolor": "Setel Warna",
+	"setfont": "Setel Huruf",
+	"testwelcomer": "Tes Selamat Datang",
+	"testgoodbye": "Tes Selamat Tinggal",
+	"apply": "Terapkan",
+	"add" : "Tambah",
+	"delete": "Hapus",
+	"enable": "Aktifkan",
+	"disable": "Matikan",
+	"enabled": "Aktif",
+	"disabled": "Mati",
+	"quit": "Keluar",
+	"exit": "Keluar",
+	"cancel": "Batal",
+	"back": "Kembali",
+	"prev": "Sebelumnya",
+	"next": "Selanjutnya",
+	"forfeit": "Kabur",
+	"noreason": "Tanpa alasan",
+	"verification": "Verifikasi",
+	"badwords": "Kata Kotor",
+	"infraction": "Pelanggaran",
+	"punishment": "Hukuman",
+	"log": "Riwayat"
+}

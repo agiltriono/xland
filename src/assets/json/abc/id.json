@@ -1,0 +1,514 @@
+[
+  {
+  	"question":"Jika perlu waktu merebus 20 menit agar sebutir telur bisa matang, berapa lama waktu merebus yang dibutuhkan agar 10 butir telur bisa matang?",
+  	"A":"10 menit",
+  	"B":"1/5 menit",
+  	"C":"3 menit",
+  	"D":"10 menit",
+  	"answer":"A"
+  },
+  {
+  	"question":"Kenapa pohon mangga yang ada di depan rumah harus ditebang?",
+  	"A":"Karena kalo di cabut berat 😌",
+  	"B":"Tergantung situasi",
+  	"C":"Karena rimbun",
+  	"D":"Daun-daun berserakan",
+  	"answer":"A"
+  },
+  {
+    "question":"Kenapa ketika cowok melihat cewek selalu jatuh cinta ?",
+    "A":"Takdir",
+    "B":"Karena memang begitu harus nya",
+    "C":"Kodrat",
+    "D":"Semua jawaban A,B,C benar",
+    "answer":"D"
+  },
+  {
+    "question":"Kalau ada angsa lima, dikali dua. Berapa total semua angsa?",
+    "A":"tetap 5, karena yang di kali ada 2, yang di darat ada 3.",
+    "B":"10 kali perkalian kan 5 x 2 = 10",
+    "C":"tetep konsisten dengan jumlah 3",
+    "D":"semua jawaban salah !",
+    "answer":"A"
+  },
+  {
+    "question":"Apa nama sebuah benda yang kalau ditutup berubah jadi tongkat, tapi ketika dibuka malah jadi tenda?",
+    "A":"Paku",
+    "B":"Payung",
+    "C":"Terpal",
+    "D":"jas hujan",
+    "answer":"B"
+  },
+  {
+    "question":"Kalau ada bus kecelakaan, pesawat jatuh, ada kapal tenggelam, semuanya akan munculdi mana",
+    "A":"Media masa",
+    "B":"Televisi",
+    "C":"Pikiran",
+    "D":"Youtube",
+    "answer":"B"
+  },
+  {
+    "question":"Tamunya sudah masuk, tapi yang punya malah keluar. Apakah itu?",
+    "A":"tukang cilok",
+    "B":"tukang becak",
+    "C":"tukang sol sepatu",
+    "D":"tukang beras",
+    "answer":"B"
+  },
+  {
+    "question":"Jika ada 10 pejuang Indonesia yang berperang lalu ada satu orang yang gugur, ada berapa orang yang akan kembali ke markas?",
+    "A":"1009, karena mati satu tumbuh seribu",
+    "B":"mati semua",
+    "C":"belanda tetap kalah meski kita menang",
+    "D":"jumlah tetap",
+    "answer":"B"
+  },
+  {
+    "question":"for(var i = 0; ....; i++)\nBerdasarkan fungsi literasi dari fungsi ( for ) di bagian (....) harus nya ?",
+    "A":"i < Object.length",
+    "B":"Object.length",
+    "C":"var Obj = i.length",
+    "D":"semua jawaban adalah salah",
+    "answer":"A"
+  },
+  {
+    "question":"Apa yang ada di ujung langit?",
+    "A":"Surga",
+    "B":"Bulan",
+    "C":"Bintang",
+    "D":"Matahari",
+    "answer":"A"
+  },
+  {
+    "question":"Berat dan tinggi di sebut ?",
+    "A":"BB & T",
+    "B":"Gendut",
+    "C":"Gedung",
+    "D":"Rumah",
+    "answer":"B"
+  },
+  {
+    "question":"Sebagai pelajar seharus nya ...... ",
+    "A":"Belajar",
+    "B":"Mengajar",
+    "C":"Bercanda dengan teman di kelas",
+    "D":"Berangkat sekolah, karena kalo gak berangkat bukan pelajar dong.",
+    "answer":"D"
+  },
+  {
+    "question":"Jaka sembung adalah sebuah film dari ..... ",
+    "A":"Indosiar",
+    "B":"Indonesia",
+    "C":"Antv",
+    "D":"Mexico",
+    "answer":"B"
+  },
+  {
+    "question":"Liverpool biasa di sebut juga dengan ....... ",
+    "A":"Devil my cry",
+    "B":"Evil power",
+    "C":"Y.N.W.A",
+    "D":"The Red Devil",
+    "answer":"D"
+  },
+  {
+    "question":"Ceritanya, yang bisa membetulkan listrik adalah ...... ",
+    "A":"Dono",
+    "B":"PLN",
+    "C":"Tukang sayur",
+    "D":"saya juga bisa ngapain orang lain",
+    "answer":"A"
+  },
+  {
+    "question":"Pucuk di cinta ulam pun .... ",
+    "A":"tiba",
+    "B":"sekarang",
+    "C":"kondangan",
+    "D":"main kerumah temen",
+    "answer":"A"
+  },
+  {
+    "question":"Jaringan internet 4G di luncurkan pertama kali di ?",
+    "A":"Amerika serikat tahun 1997",
+    "B":"Indonesia, tahun 1945",
+    "C":"GBA, tahun 1999",
+    "D":"Norwegia, tahun 2009",
+    "answer":"D"
+  },
+  {
+    "question":"*if (Object.length)*\nObject.length menunjukan bahwa apabila Obyek tersebut ada turunan maka akan menghasilkan nilai dengan pengembalian ...... ",
+    "A":"true",
+    "B":"always true",
+    "C":"false",
+    "D":"tidak satupun di atas",
+    "answer":"A"
+  },
+  {
+    "question":"T.T.S adalah sebuah game yang .... ",
+    "A":"mendatar dan menurun",
+    "B":"naik dan turun",
+    "C":"ke kiri dan ke kanan",
+    "D":"jawaban A dan B benar",
+    "answer":"A"
+  },
+  {
+    "question":"Bumi adalah .... ",
+    "A":"planet",
+    "B":"obyek langit",
+    "C":"tempat tinggal manusia",
+    "D":"pusat tata surya",
+    "answer":"A"
+  },
+  {
+    "question":"*ERROR: 404*\n\nAdalah tanda peringatan yang terdapat apabila .....",
+    "A":"halaman website tidam di temukan",
+    "B":"jaringan terputus",
+    "C":"website tidak tersedia",
+    "D":"tidak satupun di atas",
+    "answer":"A"
+  },
+  {
+    "question":"Naruto di cintai oleh .....",
+    "A":"warga konoha",
+    "B":"sakura",
+    "C":"sasuke",
+    "D":"Danzo",
+    "answer":"A"
+  },
+  {
+    "question":"Naruto adalah ayah dari .... ",
+    "A":"hinata",
+    "B":"Jiraiya",
+    "C":"Menma",
+    "D":"Boruto",
+    "answer":"D"
+  },
+  {
+    "question":"Naruto pertama kali *mencium* hinata pada series ......",
+    "A":"Naruto: The Last",
+    "B":"Naruto: Road to ninja",
+    "C":"Naruto: Legend of the Stone of Gelel",
+    "D":"Naruto: Ninja Clash in the Land of Snow",
+    "answer":"A"
+  },
+  {
+    "question":"Hinata adalah salah satu anggota dari keluarga ?",
+    "A":"Hyuga",
+    "B":"Byakugan",
+    "C":"Edward Cullen",
+    "D":"Sinchan",
+    "answer":"A"
+  },
+  {
+    "question":"Kacamata pembesar digunakan untuk .....",
+    "A":"penyelidikan kasus kriminal",
+    "B":"untuk melihat hantu",
+    "C":"untuk melihat benda kecil",
+    "D":"tidak satupun jawaban benar",
+    "answer":"C"
+  },
+  {
+    "question":"Motor adalah kendaraan ber..",
+    "A":"beroda dua",
+    "B":"berdua",
+    "C":"berempat",
+    "D":"bertiga",
+    "answer":"B"
+  },
+  {
+    "question":"Dua kali Dua sama dengan...",
+    "A":"Dua lipa",
+    "B":"Duo",
+    "C":"Empat",
+    "D":"delapan",
+    "answer":"A"
+  },
+  {
+    "question":"Bulan madu terjadi ketika....",
+    "A":"Bulan makan madu",
+    "B":"Manis rasanya",
+    "C":"Pernikahan",
+    "D":"Pacaran",
+    "answer":"D"
+  },
+  {
+    "question":"Tokopedia adalah ....",
+    "A":"pusat",
+    "B":"bengkel cinta",
+    "C":"jual/beli online",
+    "D":"bengkel online",
+    "answer":"C"
+  },
+  {
+    "question":"Kamu tau gak apa perbedaan bulan sama kamu ?",
+    "A":"Bulan di angkasa, aku di bumi",
+    "B":"Bulan itu bulat , aku itu manusia",
+    "C":"Bulan itu terjadi sama cewek , tapi kalo aku cowok",
+    "D":"Bulan itu di angkasa, kalo kamu di hati ku, ciee 😁",
+    "answer":"D"
+  },
+  {
+    "question":"Apa yang di maksud dengan Megabyte ?",
+    "A":"Satuan masa",
+    "B":"Satuan berat",
+    "C":"Satuan isi",
+    "D":"Satuan data",
+    "answer":"D"
+  },
+  {
+    "question":"Ketika manusia kelelahan maka sebaik nya lekas ....",
+    "A":"sembuh",
+    "B":"istirahat yang cukup",
+    "C":"sakit",
+    "D":"berdoa",
+    "answer":"B"
+  },
+  {
+    "question":"Saya adalah orang yang ber..... banyak",
+    "A":"uang",
+    "B":"dua",
+    "C":"tingkat",
+    "D":"badan",
+    "answer":"A"
+  },
+  {
+    "question":"Telefon seluler disebut juga dengan ...",
+    "A":"Smartphone",
+    "B":"Handfree",
+    "C":"android",
+    "D":"iphone 12",
+    "answer":"A"
+  },
+  {
+    "question":"Negara terbesar di dunia yaitu ....",
+    "A":"Bangladesh",
+    "B":"UEA",
+    "C":"Amerika",
+    "D":"Rusia",
+    "answer":"D"
+  },
+  {
+    "question":"Ora ono , adalah arti bahasa dari.....",
+    "A":"jawa",
+    "B":"Tidak ada",
+    "C":"Ada aja",
+    "D":"Jawa tengah",
+    "answer":"B"
+  },
+  {
+    "question":"Elektronik sangat berhubungan erat dengan .....",
+    "A":"Kelistrikan",
+    "B":"Modernisasi",
+    "C":"Globalisasi",
+    "D":"Teknik",
+    "answer":"A"
+  },
+  {
+    "question":"Apabila anak ayam berjumlah 5, tiba-tiba keesokan harinnya salah satu ayan itu mati, sisa anak ayam (🐔) berjumlah ....",
+    "A":"Tetap 5, karena induk nya tidak di hitung",
+    "B":"Tinggal empat karena ibu nya ikut mati bersama",
+    "C":"Tetap 5, karena masih ada haraoan anak ayam untuk hidup",
+    "D":"Semua jawaban benar",
+    "answer":"A"
+  },
+  {
+    "question":"J.K Rownling adalah ...",
+    "A":"Pemain sepak bola",
+    "B":"Pemain bulu tangkis",
+    "C":"Penulis novel",
+    "D":"DJ",
+    "answer":"C"
+  },
+  {
+    "question":"5W 1H adalah rumus yang biasa di pakain oleh ..... untuk .....",
+    "A":"Proeucer, Menyunting",
+    "B":"Wirausaha, beriklan",
+    "C":"Penjahit, Menawarkan harga",
+    "D":"Wartawan, Wawancara",
+    "answer":"D"
+  },
+  {
+    "question":"Pahlawan super dsri serial komik marvel terkenal yang dapat berlari cepat iyalah .....",
+    "A":"Suparmin",
+    "B":"Bang jono",
+    "C":"Flash",
+    "D":"Flashlight, light... light...",
+    "answer":"C"
+  },
+  {
+    "question":"Kalimat tanya yang benar adalah...",
+    "A":"Dimana kamu tinggal siapa ?",
+    "B":"Anda tinggal dengan siapakah anda ?",
+    "C":"Dimana waktu nya seksrang ?",
+    "D":"Kemana kau akan pergi ?",
+    "answer":"D"
+  },
+  {
+    "question":"Presiden amerika yang pernah mencintai seorang wanita cantik yang punya takenta menyanyi, yaitu ....",
+    "A":"John F Kennedy",
+    "B":"Bill Clinton",
+    "C":"Obama",
+    "D":"George W Bush",
+    "answer":"A"
+  },
+  {
+    "question":"Elizabeth adalah...",
+    "A":"Ratu konstitusional inggris",
+    "B":"Pembantu",
+    "C":"Penjual makanan di inggris",
+    "D":"Tukang sayur",
+    "answer":"A"
+  },
+  {
+    "question":"Lampu lalu lintas merah berkedip menandakan bahwa pengemudi harus melakukan apa?",
+    "A":"Berhenti",
+    "B":"Ngebut",
+    "C":"Lanjut dengan resiko",
+    "D":"Pura-pura bodo",
+    "answer":"A"
+  },
+  {
+    "question":"Backgammon adalah permainan berapa banyak pemain?",
+    "A":"dua",
+    "B":"tiga",
+    "C":"empat",
+    "D":"enam",
+    "answer":"A"
+  },
+  {
+    "question":"Dengan apa Anda akan menggunakan pedal wah-wah ?",
+  	"A":"sepeda",
+  	"B":"mobil",
+  	"C":"gitar elektrik",
+  	"D":"bayi",
+  	"answer":"C"
+  },
+  {
+    "question":"Profil siapa yang dapat Anda lihat di bagian depan uang receh yang saat ini beredar Luar negara eropa sana ?",
+    "A":"George Washington",
+	  "B":"Thomas Jefferson",
+  	"C":"Benjamin Franklin",
+  	"D":"Franklin Roosevelt",
+    "answer":"D"
+  },
+  {
+    "question":"Siapa penulis judul lagu \"On My Way\" ?",
+    "A":"Alan Walker",
+    "B":"Alan Smith",
+    "C":"John Snow",
+    "D":"Maissie William",
+    "answer":"A"
+  },
+  {
+    "question":"Alan walker adalah seorang ...",
+    "A":"Penyanyi dangdut",
+    "B":"Penyanyi",
+    "C":"Producer musik",
+    "D":"DJ",
+    "answer":"D"
+  },
+  {
+    "question":"Setelah balita akan memasuki masa ....",
+    "A":"Anak-anak",
+    "B":"Tua",
+    "C":"Lansia",
+    "D":"Junior",
+    "answer":"A"
+  },
+  {
+    "question":"JSON adalah singkatan dari .....",
+    "A":"JavaScript Object Notation",
+    "B":"JavaScript Override Notation",
+    "C":"Java Object Notation",
+    "D":"JavaScript Open Notation",
+    "answer":"A"
+  },
+  {
+    "question":"Handphone Android merk Xiaomi Mi adalah buatan ....",
+    "A":"China",
+    "B":"Korea",
+    "C":"Jepang",
+    "D":"Filipina",
+    "answer":"A"
+  },
+  {
+    "question":"Mamah adalah sebuatan bagi seorang ....",
+    "A":"Ibu",
+    "B":"Ayah",
+    "C":"Kakek",
+    "D":"Adik sepupu",
+    "answer":"A"
+  },
+  {
+    "question":"Pedagang kaki lima adalah orang menjajakan dagangan nya di .....",
+    "A":"Mall",
+    "B":"Supermarket",
+    "C":"Jual online",
+    "D":"Pinggir jalan",
+    "answer":"D"
+  },
+  {
+    "question":"Jalan Raya juga di sebut....",
+    "A":"Aspal",
+    "B":"Jalan Publik",
+    "C":"Lalu lintas",
+    "D":"Rambu-Rambu",
+    "answer":"B"
+  },
+  {
+    "question":"Pramuka adalah singakatan dari .....",
+    "A":"Praja Muda Karana",
+    "B":"Pasukan Cari Muka",
+    "C":"Prambanan di muka",
+    "D":"Tidak satupun jawaban benar",
+    "answer":"A"
+  },
+  {
+    "question":"Ayam Jantan akan berkokok pada ....",
+    "A":"Siang hari",
+    "B":"Pagi hari",
+    "C":"Malam hari",
+    "D":"Fajar",
+    "answer":"D"
+  },
+  {
+    "question":"Hukuman pidana adalah bagi orang yang melakukan.....",
+    "A":"Mandi bersama",
+    "B":"Buka bersama",
+    "C":"Kriminal",
+    "D":"Pacaran",
+    "answer":"C"
+  },
+  {
+    "question":"WIB adalah singkatan dari ....",
+    "A":"Waktu Indonesia barat",
+    "B":"Wawancara Ibu Bapak",
+    "C":"Wanita Indah Banget",
+    "D":"Waktu indonesia Bercanda",
+    "answer":"A"
+  },
+  {
+    "question":"WIT singkatan dari .....",
+    "A":"Waktu Indonesia Timur",
+    "B":"Waktu Inggris Timur",
+    "C":"Wulan Kisah Ibu Tercinta",
+    "D":"Waktu indonesia Barat",
+    "answer":"A"
+  },
+  {
+    "question":"Siapa kah presiden indonesia pada tahun 2018 ?",
+    "A":"Jokowi Dodo",
+    "B":"Ahok",
+    "C":"Susilo Bambang Yudhoyono",
+    "D":"Barack Obama",
+    "answer":"A"
+  },
+  {
+    "question":"Pesantren adalah tempat menimba....",
+    "A":"Ilmu Agama",
+    "B":"Air",
+    "C":"Pasir",
+    "D":"Umat",
+    "answer":"A"
+  }
+]
