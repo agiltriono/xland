@@ -1,0 +1,51 @@
+<html class='no-js' dir='ltr' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+<head>
+  <%- include("./includes/meta.ejs") %>
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/paper.min.css">
+</head>
+<script src="/js/main.js"></script>
+<body>
+  <%- include("./includes/navbar.ejs") %>
+  <div class="clear"></div>
+  <div class="wrapper">
+    <div class="main-wrapper">
+      <div class="content">
+        <div class="paper container margin-top-small">
+          <img src="<%= logo %>" class="logo">
+          <div class="botname"><%= name.toUpperCase() %></div>
+          <h3>Introduction</h3>
+          <p class="desc">A powerful multi-purpose discord bot with <%= command.length %> commands category like<br> level, auto mod, greeting system.</p>
+          <div class="clear"></div>
+          <button class="invite" type="button"><span></span>Invite <%= name.charAt(0).toUpperCase() + name.slice(1) %></button>
+        </div>
+        <div class="clear"></div>
+        <div class="paper container margin-top-small">
+          <h3>Bot can do the following..</h3>
+          <ul>
+            <li><striketrought>No login required</striketrought> configure the bot just right on your server, login to the dashboard it's not neccessary just invite the bot to your server !</li>
+          <li>You can get random motivation on everyday, you can even make your own motivation to the daily motivation by sending the bot a motivation !</li>
+          <li>No more swear word on your text channel, if she has seen any bad words on your channel she will remove it just in time.</li>
+          <li>Have you seen the bot sending a new comer with some pure greeting messages ? this is it, also if u get borred with the default setting you can customized it.</li>
+          <li>Playing some games with the bot is to hard decision, i bet you can dealt with the AI player, if you get annoyed by other player you can kick them from the game.</li>
+          <li>And many more..</li>
+          </ul>
+        </div>
+        <div class="paper container margin-top-small">
+          <h3>Important notice</h3>
+          <p><span><%= name.charAt(0) + name.slice(1)%> <span class="badge secondary">BOT</span></span> is an active development so the new feature will be pushed everytime update is necessary. Bot will inform you when the update are ready.</p>
+        </div>
+        <div class="paper container margin-top-small">
+          <h3>Feature request is open !</h3>
+          <p>join the support server if you want some a new feature to be added, click support button to start submit the feature.</p>
+          <button class="support" type="button"><span></span>Support</button>
+        </div>
+      </div>
+    </div>
+    
+    <div class="clear"></div>
+    <%- include("./includes/footer.ejs")%>
+    
+  </div>
+</body>
+</html>
