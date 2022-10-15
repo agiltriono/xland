@@ -6,6 +6,9 @@
   "homepage": "https://github.com/agiltriono/xland",
   "repository": "github:agiltriono/rayblazer",
   "bugs": "https://github.com/agiltriono/xland/issues",
+  "engines": {
+    "node": "16.x"
+  },
   "scripts": {
     "start": "node index.js",
     "node-version": "node --version",
