@@ -29,7 +29,6 @@ for (const file of eventFiles) {
 // Logging
 client.on("warn", (info) => console.log(info));
 client.on("error", (error) =>  console.error(error));
-
 process.on('unhandledRejection', error => {
 	console.error('Unhandled promise rejection:', error);
 });
