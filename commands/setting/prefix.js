@@ -12,7 +12,7 @@ module.exports.help = {
     description: "prefix.description"
 }
 
-module.exports.run = async (msg, args, creator, old) => {
+module.exports.run = async (msg, args, creator, client, old) => {
   if (!msg.member.permissions.has("ADMINISTRATOR")) return msg.reply(i18n.__("common.command.permissions.denied"));
   var prefixes = [];
   var messages = [];
