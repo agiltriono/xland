@@ -15,7 +15,7 @@
     "gyp-rebuild": "node-gyp rebuild",
     "gyp-help": "node-gyp rebuild --help"
   },
-  "author": "Ray <agiltriono@gmail.com>",
+  "author": "agiltriono <agiltriono71@yahoo.com>",
   "license": "ISC",
   "dependencies": {
     "@discordjs/builders": "^0.6.0",
