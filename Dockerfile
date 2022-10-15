@@ -1,4 +1,4 @@
-FROM node:16.9.0
+FROM node:16.17.1
 
 ENV USER=xland
 
