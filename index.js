@@ -1,6 +1,6 @@
 const { Client, Intents, Collection } = require("discord.js");
 const Discord = require("discord.js");
-const express = require("express")
+const http = require("http")
 const { DISCORD_TOKEN, numformat, timeconvert, genId, database, PREFIX } = require("./util/util");
 const client = new Client({ intents : ["GUILDS","GUILD_BANS","GUILD_MEMBERS","GUILD_MESSAGES","GUILD_MESSAGE_TYPING","GUILD_MESSAGE_REACTIONS","DIRECT_MESSAGES","DIRECT_MESSAGE_REACTIONS","DIRECT_MESSAGE_TYPING","GUILD_WEBHOOKS","GUILD_EMOJIS_AND_STICKERS"],
   partials: ['MESSAGE', 'CHANNEL', 'REACTION']
@@ -20,7 +20,13 @@ client.cooldowns = new client.discord.Collection();
 client.votesdown = new client.discord.Collection();
 client.game = [];
 client.login(DISCORD_TOKEN);
-express().listen(port, () => console.log(`Server ready, Listening on ${port}`));
+
+var http = require('http');
+http.createServer(function (req, res) {
+  res.write('Bot running..');
+  res.end();
+}).listen(8080);
+
 const eventFiles = fs.readdirSync('./event').filter(file => file.endsWith('.js'));
 
 for (const file of eventFiles) {
