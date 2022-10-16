@@ -21,11 +21,10 @@ client.votesdown = new client.discord.Collection();
 client.game = [];
 client.login(DISCORD_TOKEN);
 
-var http = require('http');
 http.createServer(function (req, res) {
   res.write('Bot running..');
   res.end();
-}).listen(8080);
+}).listen(process.env.PORT, process.env.IP);
 
 const eventFiles = fs.readdirSync('./event').filter(file => file.endsWith('.js'));
 
