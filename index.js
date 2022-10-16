@@ -24,7 +24,7 @@ client.login(DISCORD_TOKEN);
 http.createServer(function (req, res) {
   res.write('Bot running..');
   res.end();
-}).listen(process.env.PORT, process.env.IP);
+}).listen(process.env.PORT);
 
 const eventFiles = fs.readdirSync('./event').filter(file => file.endsWith('.js'));
 
