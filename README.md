@@ -1,2 +1,2 @@
 # xland
-Simple discord bot
+Bot discord for XLAND
