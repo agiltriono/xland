@@ -6,9 +6,6 @@
   "homepage": "https://github.com/agiltriono/xland",
   "repository": "github:agiltriono/xland",
   "bugs": "https://github.com/agiltriono/xland/issues",
-  "engines": {
-    "node": "16.18.0"
-  },
   "scripts": {
     "start": "node index.js",
     "node-version": "node --version",
