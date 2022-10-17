@@ -18,7 +18,7 @@ module.exports.help = {
     "Command ini berfungsi untuk membuat sebuah text channel untuk sementara.",
 };
 
-exports.run = async (msg, args, creator) => {
+exports.run = async (msg, args, creator, client, prefix) => {
   await msg.delete();
   if (
     (!msg.guild.me.permissions.has("SEND_MESSAGES") &&
@@ -40,7 +40,7 @@ exports.run = async (msg, args, creator) => {
   if (args[0].toLowerCase() === "setup") {
     if (msg.member.permissions.has("ADMINISTRATOR"))
       return create(msg, args, creator);
-    if (msg.guild.ownerId === creator.id) return create(msg, args, creator);
+    if (msg.guild.ownerId === creator.id) return create(msg, args, creator, prefix);
     return;
   }
   if (args[0].toLowerCase() === "remove") {
@@ -114,25 +114,22 @@ async function rename(msg, args, creator) {
   const author = creator.id;
   const nama = args.length > 1 ? args.join(" ") : args.join("");
   if (topic === author) {
-    const channel = await msg.guild.channels.resolve(msg.channel.id);
-    if (!channel) return;
-    channel
-      .setName(`👑-${nama.trim().toLowerCase()}`)
-      .then((c) => {
+    msg.channel.edit({
+      name: `👑-${nama.trim().toLowerCase().replace(/ +/, "-")}`
+    }).then((c) => {
         c.send(`:white_check_mark: Nama room di ganti ke **${c.name}**`)
           .then((m) => clear(m, 3000))
-    })
-      .catch(console.error);
+    }).catch(console.error);
   } else {
     return;
   }
 }
 
-async function create(msg, args, creator) {
+async function create(msg, args, creator, prefix) {
   const embed = new msg.client.discord.MessageEmbed()
     .setTitle("ROOM MAKER")
     .setDescription(
-      `**Room Master** : Pemilik room dapat menghapus channel\n**Hapus Room**: Gunakan command \`${msg.client.prefix}txt remove\` saat berada di dalam room\n**Ganti Nama Room**: Gunakan command\`${msg.client.prefix}txt rename (name)\` saat berada di dalam room`
+      `**Room Master** : Pemilik room dapat menghapus channel\n**Hapus Room**: Gunakan command \`${prefix}txt remove\` saat berada di dalam room\n**Ganti Nama Room**: Gunakan command \`${prefix}txt rename (name)\` saat berada di dalam room`
     )
     .setColor("BLACK");
   const row = new msg.client.discord.MessageActionRow().addComponents(
