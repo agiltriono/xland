@@ -39,7 +39,7 @@ exports.run = async (msg, args, creator, client, prefix) => {
     });
   if (args[0].toLowerCase() === "setup") {
     if (msg.member.permissions.has("ADMINISTRATOR"))
-      return create(msg, args, creator);
+      return create(msg, args, creator, prefix);
     if (msg.guild.ownerId === creator.id) return create(msg, args, creator, prefix);
     return;
   }
