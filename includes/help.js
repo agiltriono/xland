@@ -9,7 +9,7 @@ module.exports = async function help(msg, args, creator, mention, prefix) {
         prefix: prefix
       })));
     } else {
-  	  commandhelp(msg, creator)
+  	  commandhelp(msg, creator, prefix)
     }
   } else {
 		var cmd = undefined;
@@ -44,7 +44,7 @@ module.exports = async function help(msg, args, creator, mention, prefix) {
 	}
 }
 
-async function commandhelp(msg, creator) {
+async function commandhelp(msg, creator, prefix) {
   var fields = [];
   var messages = [];
   var button = [
@@ -60,8 +60,8 @@ async function commandhelp(msg, creator) {
   var max = fields.length;
   var min = 0;
   fs.readdirSync("./commands/").forEach(category => {
-		const dir = msg.client.commands.filter(obj => obj.help.category.toLowerCase() === category.toLowerCase());
-	  const capitalise = category.slice(0, 1).toUpperCase() + category.slice(1);
+    const dir = msg.client.commands.filter(obj => obj.help.category.toLowerCase() === category.toLowerCase());
+    const capitalise = category.slice(0, 1).toUpperCase() + category.slice(1);
     try {
       if (dir.size != 0) {
       	if (!msg.member.permissions.has("ADMINISTRATOR")) {
