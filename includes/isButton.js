@@ -3,56 +3,58 @@ const db = database.ref("guild");
 
 module.exports = {
   async isButton(interaction, client) {
-	if ((/^buat_channel_[a-zA-Z0-9]{11}/).test(interaction.customId)) {
+	  if ((/^buat_channel_[a-zA-Z0-9]{11}/).test(interaction.customId)) {
 		await interaction.deferReply({ephemeral:true})
-		interaction.channel.clone().then(async clone => {
-		db.child(interaction.guild.id).once("value", async(server) => {
-			var prefix = server.child("prefix").val() ? server.child("prefix").val() : interaction.client.prefix;
-			var text_room = server.child("text_room");
-			await clone.setName("👑-room-"+interaction.user.username)
-			//await clone.setParent(interaction.channel.parent);
-			await clone.setPosition(interaction.channel.position);
-			await clone.setTopic(interaction.user.id)
-			if(text_room.numChildren() === 0) {
-				await interaction.editReply({ content: `:white_check_mark: Channel sudah berhasil di buat\nKunjungi channel <#${clone.id}>`, ephemeral: true })
-				await clone.send(`>>> **ROOM MASTER** <@${interaction.user.id}> :crown:`);
-			} else {
-				var allowrole = text_room.child("allowrole").val();
-				var rolelist = allowrole.trim().replace(/ +/, "")
-				var array = rolelist.split(",")
-				var count = []
-				if (rolelist != "") {
-					if (rolelist.split(",").length >= 1) {
-						for(let i = 0; i < array.length; i++) {
-							count.push(i)
-							if (array[i]) {
-							  const role = interaction.guild.roles.cache.find(r => r.id === array[i])
-							  await clone.permissionOverwrites.create(role, { 
-								VIEW_CHANNEL: true,
-								SEND_MESSAGES: true,
-								READ_MESSAGE_HISTORY: true
-							  });
-							}
-							if (count.length === array.length) {
-								await interaction.editReply({ content: `:white_check_mark: Channel sudah berhasil di buat\nKunjungi channel <#${clone.id}>`, ephemeral: true })
-								await clone.send(`>>> **ROOM MASTER** <@${interaction.user.id}> :crown:`);
-								break;
-							}
-						}
-					} else {
-						const role = interaction.guild.roles.cache.find(r => r.id === rolelist)
-						await clone.permissionOverwrites.create(role, { 
-							VIEW_CHANNEL: true,
-							SEND_MESSAGES: true,
-							READ_MESSAGE_HISTORY: true
-						});
-						await interaction.editReply({ content: `:white_check_mark: Channel sudah berhasil di buat\nKunjungi channel <#${clone.id}>`, ephemeral: true })
-						await clone.send(`>>> **ROOM MASTER** <@${interaction.user.id}> :crown:`);
-					}
-				}
-			}
-		})
-	  }).catch(console.error);
+		interaction.guild.channels.create(`👑-room-${interaction.user.username}`, {
+      parent: interaction.channel.parent,
+      topic: interaction.user.id,
+      type: 'text'
+    }).then(async clone => {
+      await clone.lockPermissions()
+      await clone.permissionOverwrites.set(interaction.channel.permissionOverwrites.cache)
+  		db.child(interaction.guild.id).once("value", async(server) => {
+  			var prefix = server.child("prefix").val() ? server.child("prefix").val() : interaction.client.prefix;
+  			var text_room = server.child("text_room");
+  			if(text_room.numChildren() === 0) {
+  				await interaction.editReply({ content: `:white_check_mark: Channel sudah berhasil di buat\nKunjungi channel <#${clone.id}>`, ephemeral: true })
+  				await clone.send(`>>> **ROOM MASTER** <@${interaction.user.id}> :crown:`);
+  			} else {
+  				var allowrole = text_room.child("allowrole").val();
+  				var rolelist = allowrole.trim().replace(/ +/, "")
+  				var array = rolelist.split(",")
+  				var count = []
+  				if (rolelist != "") {
+  					if (rolelist.split(",").length >= 1) {
+  						for(let i = 0; i < array.length; i++) {
+  							count.push(i)
+  							if (array[i]) {
+  							  const role = interaction.guild.roles.cache.find(r => r.id === array[i])
+  							  await clone.permissionOverwrites.create(role, { 
+  								VIEW_CHANNEL: true,
+  								SEND_MESSAGES: true,
+  								READ_MESSAGE_HISTORY: true
+  							  });
+  							}
+  							if (count.length === array.length) {
+  								await interaction.editReply({ content: `:white_check_mark: Channel sudah berhasil di buat\nKunjungi channel <#${clone.id}>`, ephemeral: true })
+  								await clone.send(`>>> **ROOM MASTER** <@${interaction.user.id}> :crown:`);
+  								break;
+  							}
+  						}
+  					} else {
+  						const role = interaction.guild.roles.cache.find(r => r.id === rolelist)
+  						await clone.permissionOverwrites.create(role, { 
+  							VIEW_CHANNEL: true,
+  							SEND_MESSAGES: true,
+  							READ_MESSAGE_HISTORY: true
+  						});
+  						await interaction.editReply({ content: `:white_check_mark: Channel sudah berhasil di buat\nKunjungi channel <#${clone.id}>`, ephemeral: true })
+  						await clone.send(`>>> **ROOM MASTER** <@${interaction.user.id}> :crown:`);
+  					}
+  				}
+  			}
+  		})
+	  })
 	}
     if ((/^upvote_[a-zA-Z0-9]{11}_[0-9]/).test(interaction.customId)) {
       await interaction.deferReply({ephemeral:true})
@@ -238,7 +240,6 @@ module.exports = {
         });
       });
     };
-
     if (interaction.customId === `close_ticket_${interaction.user.id}`) {
       if (!interaction.member.permissionsIn(interaction.channel)) return interaction.reply({content: "Permissions denied !", ephemeral: true});
       return client.db.child(interaction.guild.id).once("value", async (data) => {
@@ -343,7 +344,6 @@ module.exports = {
         });
       });
     };
-
     if (interaction.customId === `delete_ticket_${interaction.user.id}`) {
       if (!interaction.member.permissions.has("VIEW_CHANNEL") && !interaction.member.permissions.has("SEND_MESSAGES")) return interaction.reply({content: "Permissions denied !", ephemeral: true});
       return client.db.child(interaction.guild.id).once("value", async (data) => {

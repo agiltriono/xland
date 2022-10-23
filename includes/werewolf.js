@@ -99,65 +99,43 @@ module.exports = async function help(msg, args, creator, game, client, prefix) {
 		Kelebihan: Jumlah lebih banyak dari serigala.
 		Kelemahan: Hanya bisa pasrah menunggu ajal menjemput.
 
-		${roles("werewolf").emoji} **3. Werewolf**
+		${roles("werewolf").emoji} **2. Werewolf**
 		Kelebihan: Saling tahu sesama serigala. Itu pun jika ada.
 		Kelemahan: Bila kedokmu ketahuan, kamu bisa mati digantung warga desa di ujung senja.
 
-		${roles("seer").emoji} **4. Seer/Cenayang**
+		${roles("seer").emoji} **3. Seer/Cenayang**
 		Kelebihan: Bisa mengetahui peran para pemain.
 		Kelemahan: Tidak bisa percaya diri karena belum tentu cenayang murni.
 
-		${roles("fool").emoji} **5. Fool/SeerKW**
-		Kelebihan: Bisa nerawang.
-		Kelemahan: Referensinya buku togel.
-
-		${roles("lycan").emoji} **6. Lycan**
-		Kelebihan: Bisa jadi serigala cadangan apabila diterawang seer tetapi warga baik aslinya.
-		Kelemahan: Jika serigala menang ketika kamu belum berubah jadi serigala, kamu kalah. Jika warga desa menang, kamu juga kalah. oleh sebab itu tergantung posisi sudah diterawang atau belum (goodside/badside)
-
-		${roles("doppelganger").emoji} **7. Doppelganger**
-		Kelebihan: Bisa mewarisi kekuatan orang yang sudah mati.
-		Kelemahan: Jika yang kamu pilih ternyata hanya warga desa biasa, kamu harus qonaah.
-
-		${roles("guardian").emoji} **8. Guardian Angel**
+		${roles("guardian").emoji} **4. Guardian**
 		Kelebihan: Bisa melindungi orang lain dari terkaman serigala.
 		Kelemahan: Jika melindungi serigala kemungkinan serigala menang.
 
-		${roles("hunter").emoji} **9. Hunter**
+		${roles("hunter").emoji} **5. Hunter**
 		Kelebihan: Pendendam. Bisa membalas kematian.
 		Kelemahan: Penakut. Mati aja minta ditemenin.
-
-		${roles("gunner").emoji} **10. Gunner**
-		Kelebihan: Punya satu pistol, 1/2 pelor.
-		Kelemahan: Ketika pelurumu habis, kamu tidak bisa isi ulang dan harus menjadi warga desa biasa.
-
-		${roles("cupid").emoji} **11. Cupid**
-		Kelebihan: Bisa menjodohkan diri sendiri dengan orang lain. Apabila kamu menjodohkan diri sendiri dengan serigala, maka kamu telah membuat koalisi yang kuat.
-		Kelemahan: Jika kamu salah menjodohkan orang lain, kamu bisa saja dibunuh oleh mereka. Cupid loses, love wins. Di saat pemain lain menang sebagai kekasih, kamu mati aja masih jomblo.
 		_break_
-		Ini dia Moms, cara bermain werewolf. Yuk disimak!
+		Ini dia cara bermain werewolf. Yuk disimak!
 
 		**Malam Hari**
-
 		Pada malam hari, werewolf akan memilih villager dan memakannya saat mereka tidur. Seer akan memilih seseorang untuk dibaca dan melihat apakah mereka adalah werewolf atau bukan.
 
 		Moderator membuka permainan dengan mengatakan, "Sekarang malam hari, semua orang menutup mata dan menyenandungkan lagu pengantar tidur untuk dirimu sendiri sampai pagi."
 
 		Lalu ucapkan, "Werewolf, buka matamu dan pilih korban untuk pesta malam ini."
 
-		Werewolf akan menunjuk kepala korban untuk memilih.
+		Werewolf akan memilih korban.
 
 		Setelah werewolf sudah memastikan korbannya, katakan, "Baiklah, korban malam ini telah dipilih. Werewolf, tutup matamu."
 
-		Sekarang ucapkan "Seer, buka matamu dan tunjuk orang yang jiwanya ingin kamu lihat." Serta katakan, "Detektif, pilih satu nama yang ingin kamu selidiki."
+		Sekarang ucapkan "Seer, buka matamu dan tunjuk orang yang jiwanya ingin kamu lihat."
 
-		Jika seer dan detektif sudah menunjukkan siapa yang ingin dibaca, moderator dapat mengumumkan "werewolf" atau "villager" sesuai dengan kartu individu tersebut.
+		Jika seer sudah menunjukkan siapa yang ingin dibaca, moderator dapat mengumumkan "werewolf" atau "villager" sesuai dengan kartu individu tersebut.
 
 		**Pagi Hari**
-
 		Pada pagi hari, pemain bisa mengaku tidak bersalah, meragukan kesaksian orang lain, atau menuduh satu sama lain. Pemain bisa mengatakan apa saja, tetapi orang mati harus tetap diam.
 
-		Pada akhirnya, akan ada pemungutan suara tentang siapa yang menurut villager adalah werewolf, dan orang yang tidak beruntung itu akan digantung. Jika orang yang digantung adalah werewolf, permainan akan berakhir dan seluruhvillager akan hidup. Namun, jika orang yang digantung tidak bersalah, permainan berlanjut, dan Werewolf akan menemukan korban baru malam itu.`
+		Pada akhirnya, akan ada pemungutan suara tentang siapa yang menurut villager adalah werewolf, dan orang yang tidak beruntung itu akan digantung. Jika orang yang digantung adalah werewolf, permainan akan berakhir dan seluruh villager akan hidup. Namun, jika orang yang digantung tidak bersalah, permainan berlanjut, dan Werewolf akan menemukan korban baru malam itu.`
 	description = description.split(/_break_/gm)
 	description.forEach(async item => {
 		await msg.channel.send(embeds(item.trim()))
