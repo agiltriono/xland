@@ -92,9 +92,7 @@ async function allowrole(msg, args, creator) {
         allowrole: rolelist.replace(/ +/, ""),
       });
   }
-  msg.channel
-    .send(":white_check_mark: Role berhasil di update.")
-    .then(async (m) => {
+  msg.channel.send(":white_check_mark: Role berhasil di update.").then(async (m) => {
       await clear(m, 2000);
     });
 }
@@ -114,12 +112,8 @@ async function rename(msg, args, creator) {
   const author = creator.id;
   const nama = args.length > 1 ? args.join(" ") : args.join("");
   if (topic === author) {
-    msg.channel.edit({
-      name: `👑-${nama.trim().toLowerCase().replace(/ +/, "-")}`
-    }).then((c) => {
-        c.send(`:white_check_mark: Nama room di ganti ke **${c.name}**`)
-          .then((m) => clear(m, 3000))
-    }).catch(console.error);
+		await msg.channel.setName(`👑-${nama.trim().toLowerCase().replace(/ +/, "-")}`)
+	  await msg.channel.send(`:white_check_mark: Nama room di ganti ke **${msg.channel.name}**`)
   } else {
     return;
   }
