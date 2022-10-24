@@ -44,7 +44,7 @@ module.exports.run = async (msg, args, creator, client, prefix) => {
 //(Message, Message.messages.fetch, Date.now(), Date.now())
 async function purge (msg, amount, removed, startdate) {
   const start = startdate || Date.now()
-  const message = await message.channel.messages.fetch();
+  const message = await msg.channel.messages.fetch();
   const total = amount || message.size;
   let progress = 0
   message.forEach(async m => {
