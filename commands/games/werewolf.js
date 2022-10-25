@@ -3,7 +3,7 @@ const fs = require("fs");
 const path = require("path");
 const i18n = require(".././../util/i18n");
 const { database, TIMER_GIF, getmsg, clear, embeds, remove, color } = require(".././../util/util");
-const help = require(".././../includes/werewolf.js");
+const { help, randomize, roles, emoji } = require(".././../includes/werewolf.js");
 const db = database.ref("guild");
 const shuffle = require(".././../util/shuffle-array");
 var mati = ":skull:"
@@ -21,131 +21,12 @@ module.exports.help = {
   permissions: ["SEND_MESSAGES"],
   description: "Ketika berkumpul bersama teman di discord ada kalanya merasa bosan dan ingin melakukan sebuah permainan untuk mencairkan suasana. Nah bisa dengan coba bermain werewolf dan cara bermain werewolf cukup mudah, sehingga bisa dimainkan oleh segala usia."
 }
-function randomize(array) {
-  let currentIndex = array.length,  randomIndex;
-  while (currentIndex != 0) {
-    randomIndex = Math.floor(Math.random() * currentIndex);
-    currentIndex--;
-    [array[currentIndex], array[randomIndex]] = [
-      array[randomIndex], array[currentIndex]];
-  }
-
-  return array;
-}
-function roles(name) {
-	let role = [
-		{
-			name: 'villager',
-			emoji: "<:villager:1031680738451521578>",
-			id: "1031680738451521578"
-		},
-		{
-			name: 'werewolf',
-			emoji: "<:werewolf:1031680743539232788>",
-			id: "1031680743539232788"
-		},
-		{
-			name: 'seer',
-			emoji: "<:seer:1031680733212835860>",
-			id: "1031680733212835860"
-		},
-		{
-			name: 'guardian',
-			emoji: "<:guardian:1031680707476586536>",
-			id: "1031680707476586536"
-		},
-		{
-			name: 'hunter',
-			emoji: "<:Headhunter:1031680714976002099>",
-			id: "1031680714976002099"
-		}
-	]
-	return role.find(r => r.name === name)
-}
-
-function emoji(no) {
-	let emo = [
-	  {
-		emoji: "<:1_:1031215481371246592>",
-		id: "1031215481371246592"
-	  },
-	  {
-		emoji: "<:2_:1031215484529545318>",
-		id: "1031215484529545318"
-	  },
-	  {
-		emoji: "<:3_:1031215486337294468>",
-		id: "1031215486337294468"
-	  },
-	  {
-		emoji: "<:4_:1031215489428488402>",
-		id: "1031215489428488402"
-	  },
-	  {
-		emoji: "<:5_:1031215491936698398>",
-		id: "1031215491936698398"
-	  },
-	  {
-		emoji: "<:6_:1031215494822371468>",
-		id: "1031215494822371468"
-	  },
-	  {
-		emoji: "<:7_:1031215497536077965>",
-		id: "1031215497536077965"
-	  },
-	  {
-		emoji: "<:8_:1031215499712929792>",
-		id: "1031215499712929792"
-	  },
-	  {
-		emoji: "<:9_:1031215502372122724>",
-		id: "1031215502372122724"
-	  },
-	  {
-		emoji: "<:10_:1031215506688061671>",
-		id: "1031215506688061671"
-	  },
-	  {
-		emoji: "<:11_:1031215509506621510>",
-		id: "1031215509506621510"
-	  },
-	  {
-		emoji: "<:12_:1031215511859642428>",
-		id: "1031215511859642428"
-	  },
-	  {
-		emoji: "<:13_:1031215514720153620>",
-		id: "1031215514720153620"
-	  },
-	  {
-		emoji: "<:14_:1031215517308039280>",
-		id: "1031215517308039280"
-	  },
-	  {
-		emoji: "<:15_:1031215519577157632>",
-		id: "1031215519577157632"
-	  }
-	]
-	return emo[no]
-}
-
-function playerlist(player, tamat){
-	var pemain;
-	if (tamat == false) {
-	  let kehidupan = player.filter(u=>u.status === hidup)
-	  let kematian = player.filter(u=>u.status === mati)
-		pemain = `**Alam Kehidupan**\n${kehidupan.map(u=>`${u.status} <@${u.id}> ${u.saved_by != "" ? `**Saved by ${u.saved_by.capitalize()}**` : ""}`).join("\n")}\n**Alam Kematian**\n${kematian.length != 0 ? kehidupan.map(u=>`${u.status} <@${u.id}> ${u.killed_by != "" ? `Killed by **${u.killed_by.capitalize()}**` : ""}`).join("\n") : 'Hmmm....'}`
-	} else {
-		return player.map(p => `${p.status == hidup ? hidup : mati} ${roles(p.role).emoji} ${p.status == hidup ? `<@${p.id}>` : p.name}`)
-	}
-}
 
 exports.run = async function(msg, args, creator, client, prefix) {
   await msg.delete()
   if (!msg.guild.me.permissions.has("SEND_MESSAGES")) return msg.reply(embeds(i18n.__mf("common.command.permissions.missing",{perm:"`SEND_MESSAGES`"})));
   const cmd = args.join(" ")
   if (args.length > 0 && cmd.replace(/ +/, "").toLowerCase() === "how2play") return help(msg, args, creator, client, prefix);
-  
  // collector
   var player = [];
   var messages = [];
@@ -261,7 +142,6 @@ exports.run = async function(msg, args, creator, client, prefix) {
   }
 }
 async function setrole(msg, party, creator) {
-  
  // collector
   var player = party;
   var wrole;
@@ -469,7 +349,6 @@ async function updatestatus(player, result, type, callback) {
 }
 
 async function narasi(msg, party, creator, days, results) {
-	
  // collector
   var day = days === "malam" ? "malam" : "pagi"
   var Kehidupan = party.filter(u=>u.status != mati)
