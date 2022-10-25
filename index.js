@@ -18,7 +18,6 @@ client.commands = new client.discord.Collection();
 client.aliases = new client.discord.Collection();
 client.cooldowns = new client.discord.Collection();
 client.votesdown = new client.discord.Collection();
-client.game = [];
 client.login(DISCORD_TOKEN);
 
 http.createServer(function (req, res) {
