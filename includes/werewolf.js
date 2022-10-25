@@ -1,86 +1,128 @@
 const { embeds, clear } = require("../util/util");
-function roles(name) {
+var randomize = function(array) {
+  let currentIndex = array.length,  randomIndex;
+  while (currentIndex != 0) {
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex--;
+    [array[currentIndex], array[randomIndex]] = [
+      array[randomIndex], array[currentIndex]];
+  }
+  return array;
+}
+var roles = function(name) {
 	let role = [
-		{
-			name: 'moderator',
-			emoji: "<:owner:1031680722198597732>",
-			id: "1031680722198597732",
-			power_limit: 0
-		},
 		{
 			name: 'villager',
 			emoji: "<:villager:1031680738451521578>",
-			id: "1031680738451521578",
-			power_limit: 0
+			id: "1031680738451521578"
 		},
 		{
 			name: 'werewolf',
 			emoji: "<:werewolf:1031680743539232788>",
-			id: "1031680743539232788",
-			power_limit: 0
+			id: "1031680743539232788"
 		},
 		{
 			name: 'seer',
 			emoji: "<:seer:1031680733212835860>",
-			id: "1031680733212835860",
-			power_limit: 0
-		},
-		{
-			name: 'fool',
-			emoji: "<:fool:1031680703492010025>",
-			id: "1031680703492010025",
-			power_limit: 0
-		},
-		{
-			name: 'lycan',
-			emoji: "<:lycan:1031680718746681354>",
-			id: "1031680718746681354",
-			power_limit: 1
-		},
-		{
-			name: 'doppelganger',
-			emoji: "<:doppelganger:1031680698936991764>",
-			id: "1031680698936991764",
-			power_limit: 2
+			id: "1031680733212835860"
 		},
 		{
 			name: 'guardian',
 			emoji: "<:guardian:1031680707476586536>",
-			id: "1031680707476586536",
-			power_limit: 0
+			id: "1031680707476586536"
 		},
 		{
 			name: 'hunter',
 			emoji: "<:Headhunter:1031680714976002099>",
-			id: "1031680714976002099",
-			power_limit: 0
-		},
-		{
-			name: 'gunner',
-			emoji: "<:gunner:1031680712140656721>",
-			id: "1031680712140656721",
-			power_limit: 2
-		},
-		{
-			name: 'cupid',
-			emoji: "<:cupid1:1031680695204053012>",
-			id: "1031680695204053012",
-			power_limit: 0
+			id: "1031680714976002099"
 		}
 	]
 	return role.find(r => r.name === name)
 }
-module.exports = async function help(msg, args, creator, game, client, prefix) {
+var emoji = function(no) {
+	let emo = [
+	  {
+		emoji: "<:1_:1031215481371246592>",
+		id: "1031215481371246592"
+	  },
+	  {
+		emoji: "<:2_:1031215484529545318>",
+		id: "1031215484529545318"
+	  },
+	  {
+		emoji: "<:3_:1031215486337294468>",
+		id: "1031215486337294468"
+	  },
+	  {
+		emoji: "<:4_:1031215489428488402>",
+		id: "1031215489428488402"
+	  },
+	  {
+		emoji: "<:5_:1031215491936698398>",
+		id: "1031215491936698398"
+	  },
+	  {
+		emoji: "<:6_:1031215494822371468>",
+		id: "1031215494822371468"
+	  },
+	  {
+		emoji: "<:7_:1031215497536077965>",
+		id: "1031215497536077965"
+	  },
+	  {
+		emoji: "<:8_:1031215499712929792>",
+		id: "1031215499712929792"
+	  },
+	  {
+		emoji: "<:9_:1031215502372122724>",
+		id: "1031215502372122724"
+	  },
+	  {
+		emoji: "<:10_:1031215506688061671>",
+		id: "1031215506688061671"
+	  },
+	  {
+		emoji: "<:11_:1031215509506621510>",
+		id: "1031215509506621510"
+	  },
+	  {
+		emoji: "<:12_:1031215511859642428>",
+		id: "1031215511859642428"
+	  },
+	  {
+		emoji: "<:13_:1031215514720153620>",
+		id: "1031215514720153620"
+	  },
+	  {
+		emoji: "<:14_:1031215517308039280>",
+		id: "1031215517308039280"
+	  },
+	  {
+		emoji: "<:15_:1031215519577157632>",
+		id: "1031215519577157632"
+	  }
+	]
+	return emo[no]
+}
+var playerlist = function(player, tamat){
+	var pemain;
+	if (tamat == false) {
+	  let kehidupan = player.filter(u=>u.status === hidup)
+	  let kematian = player.filter(u=>u.status === mati)
+		pemain = `**Alam Kehidupan**\n${kehidupan.map(u=>`${u.status} <@${u.id}> ${u.saved_by != "" ? `**Saved by ${u.saved_by.capitalize()}**` : ""}`).join("\n")}\n**Alam Kematian**\n${kematian.length != 0 ? kehidupan.map(u=>`${u.status} <@${u.id}> ${u.killed_by != "" ? `Killed by **${u.killed_by.capitalize()}**` : ""}`).join("\n") : 'Hmmm....'}`
+	} else {
+		return player.map(p => `${p.status == hidup ? hidup : mati} ${roles(p.role).emoji} ${p.status == hidup ? `<@${p.id}>` : p.name}`)
+	}
+}
+
+
+exports.randomize = randomize;
+exports.roles = roles;
+exports.emoji = emoji;
+exports.playerlist = playerlist;
+
+module.exports = async function help(msg, args, creator, client, prefix) {
 	var description = `**Cara Bermain Werewolf**
-		Sebelum memulai permainan ini, ada baiknya kamu mengetahui latar belakang cerita terlebih dahulu. Tanpa mengetahuinya, sulit rasanya Moms bisa menikmati permainan ini tanpa harus kebingungan. Nah, berikut latar belakang cerita Werewolf.
-
-		**Latar Belakang Cerita**
-		Game werewolf merupakan permainan unik karena akan ada alur cerita yang kita ikuti, hingga dapat memilih siapakah werewolf diantara pemain. Pahami alur cerita sebelum tahu cara bermain werewolf. Awas, jangan sampai membunuh villager yang tidak bersalah!
-		Latar belakang cerita dimulainya game werewolf adalah, ketika sebuah desa didatangi oleh siluman berwujud serigala (werewolf) yang memakan warga desa (villager) ketika malam tiba.
-		Bila hari berganti siang, werewolf akan menyamar seolah-olah mereka adalah para villager yang juga terkejut dengan penemuan mayat dengan luka gigitan.
-		Disinilah tugas para villager untuk menginterogasi orang-orang yang mencurigakan, serta menebak apakah benar mereka werewold atau bukan.
-		Dalam proses interogasi, akan ada bala bantuan dari orang-orang profesional yang mengumpulkan berbagai bukti apakah benar orang tersebut adalah werewolf atau bukan. Mereka adalah Seer dan Detektif. Sedangkan proses interogasi akan dipimpin oleh moderator, yang juga pemegang time table permainan.
-
 		Cara bermain werewolf yang pertama adalah tahu pembagian peran untuk setiap pemain. Sebelum memulai waktu malam hari yang juga mengawali peramainan, akan ada moderator yang membagi peran untuk setiap pemain. Jika Moms terpilih menjadi moderator, maka ini adalah penjelasan pembagian peran pemain.
 		_break_
 		${roles("moderator").emoji} **A. Moderator**
@@ -140,20 +182,4 @@ module.exports = async function help(msg, args, creator, game, client, prefix) {
 	description.forEach(async item => {
 		await msg.channel.send(embeds(item.trim()))
 	})
-	/*
-	const queue = []
-	description.forEach(async item => {
-		const message = await msg.channel.send(embeds(item.trim()))
-		await queue.push(message.id)
-	})
-
-	var interval = setInterval(async () => {
-		if (description.length === queue.length) {
-			clearInterval(interval)
-			for (const id of queue) {
-				let message = await msg.channel.messages.fetch(id);
-				await clear(message, 4000)
-			}
-		}
-	}, 100)*/
 }
