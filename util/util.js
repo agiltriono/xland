@@ -108,6 +108,9 @@ exports.timeconvert = function(secs) {
     s: seconds
   };
 }
+exports.color = function () {
+  return colorful()
+}
 exports.database = admin.database();
 exports.DISCORD_TOKEN = process.env.DISCORD_TOKEN;
 exports.fdb = process.env.FIREBASE_DATABASEURL;
