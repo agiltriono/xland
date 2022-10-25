@@ -4,7 +4,7 @@ module.exports = {
   name : "ready",
   async execute(client) {
     const directory = path.join(__dirname, "..","commands");
-    client.user.setActivity(`Knight of XLAND`, { type: "PLAYING" });
+    client.user.setActivity(`Knight with xlhelp`, { type: "PLAYING" });
     // command handler
     fs.readdirSync(directory).forEach(child => {
         const commands = fs.readdirSync(`${directory}/${child}/`).filter(files => files.endsWith(".js"));

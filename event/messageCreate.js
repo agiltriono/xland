@@ -1,5 +1,5 @@
 const i18n = require("../util/i18n");
-const { database, timeconvert, games } = require("../util/util");
+const { database, timeconvert, embeds, remove, clear } = require("../util/util");
 const help = require("../includes/help");
 const db = database.ref("guild");
 module.exports = {
@@ -47,12 +47,12 @@ db.child(message.guild.id).once("value", async function(data) {
         if (now < expirationTime) {
           const timeLeft = (expirationTime - now) / 1000;
           const elapsed = timeconvert(timeLeft);
-          return message.reply(i18n.__mf("common.cooldown", { 
+          return message.reply(embeds(i18n.__mf("common.cooldown", { 
             h: elapsed.h > 0 ? i18n.__mf("timeconvert.hour",{h: elapsed.h}) : "",
             m: elapsed.m > 0 ? i18n.__mf("timeconvert.minute",{m: elapsed.m}) : "",
             s: elapsed.s > 0 ? i18n.__mf("timeconvert.second",{s: elapsed.s}) : "",
             name: command.help.name
-          }))
+          })))
         }
       }
     
@@ -60,22 +60,7 @@ db.child(message.guild.id).once("value", async function(data) {
       setTimeout(() => timestamps.delete(message.author.id), cooldownAmount);
       
       try {
-        
-        if (command.help.category == "Games") {
-          if (client.game.find(obj => obj.game.includes(command.help.name))) {
-            if (client.game.find(obj => obj.guild.includes(message.guild.id) && obj.started === false)) {
-              command.run(message, args, creator, client.game.find(obj => obj.guild.includes(message.guild.id) && obj.game.includes(command.help.name)), client, prefix)
-            } else {
-              message.reply(i18n.__("common.command.multiple"));
-            }
-          } else {
-            client.game.push(new games(command.help.name, message.guild.id, false));
-            command.run(message, args, creator, client.game.find(obj => obj.guild.includes(message.guild.id) && obj.game.includes(command.help.name)), client, prefix)
-          }
-        } else {
-          command.run(message, args, creator, client, prefix);
-        }
-        
+        command.run(message, args, creator, client, prefix);
       } catch (error) {
         console.error(error);
       }
