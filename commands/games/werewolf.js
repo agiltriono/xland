@@ -474,7 +474,7 @@ async function updatestatus(player, result, type, callback) {
 async function narasi(msg, party, game, creator, days, results) {
 	game.started = false
  // collector
-  var day = days === "malam" ? "malam" : "s"
+  var day = days === "malam" ? "malam" : "pagi"
   var Kehidupan = party.filter(u=>u.status != mati)
   var kematian = party.filter(u=>u.status != hidup)
   var player = party;
