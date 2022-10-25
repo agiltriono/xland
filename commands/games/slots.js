@@ -14,7 +14,7 @@ module.exports.help = {
   description: "games.slots.description"
 }
 
-exports.run = async function(msg, args , creator, game, client) {
+exports.run = async function(msg, args , creator, client) {
   if (!msg.guild.me.permissions.has("SEND_MESSAGES")) return msg.reply(i18n.__mf("common.command.permissions.missing",{perm:"`SEND_MESSAGES`"}));
   const result = [];
   const slots = ['🍓', '🍕', '🍉', '🍘', '🍔'];

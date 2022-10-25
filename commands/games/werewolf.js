@@ -2,7 +2,7 @@ const { MessageActionRow, Modal, TextInputComponent, MessageButton } = require("
 const fs = require("fs");
 const path = require("path");
 const i18n = require(".././../util/i18n");
-const { database, TIMER_GIF, getmsg, clear, embeds, remove, games, color } = require(".././../util/util");
+const { database, TIMER_GIF, getmsg, clear, embeds, remove, color } = require(".././../util/util");
 const help = require(".././../includes/werewolf.js");
 const db = database.ref("guild");
 const shuffle = require(".././../util/shuffle-array");
@@ -17,7 +17,7 @@ module.exports.help = {
   cooldown: 10,
   category: "Games",
   multiplayer: true,
-  usage: "ww || ww how2play",
+  usage: "how2play",
   permissions: ["SEND_MESSAGES"],
   description: "Ketika berkumpul bersama teman di discord ada kalanya merasa bosan dan ingin melakukan sebuah permainan untuk mencairkan suasana. Nah bisa dengan coba bermain werewolf dan cara bermain werewolf cukup mudah, sehingga bisa dimainkan oleh segala usia."
 }
@@ -140,12 +140,12 @@ function playerlist(player, tamat){
 	}
 }
 
-exports.run = async function(msg, args, creator, game, client, prefix) {
+exports.run = async function(msg, args, creator, client, prefix) {
   await msg.delete()
   if (!msg.guild.me.permissions.has("SEND_MESSAGES")) return msg.reply(embeds(i18n.__mf("common.command.permissions.missing",{perm:"`SEND_MESSAGES`"})));
   const cmd = args.join(" ")
-  if (args.length > 0 && cmd.replace(/ +/, "").toLowerCase() === "how2play") return help(msg, args, creator, game, client, prefix);
-  game.started = false;
+  if (args.length > 0 && cmd.replace(/ +/, "").toLowerCase() === "how2play") return help(msg, args, creator, client, prefix);
+  
  // collector
   var player = [];
   var messages = [];
@@ -236,14 +236,11 @@ exports.run = async function(msg, args, creator, game, client, prefix) {
   c.on("end", async (collected, reason) => {
     switch (reason) {
       case "start":
-		    game.started = false;
-        setrole(msg, player, game, creator)
+        setrole(msg, player, creator)
         break;
       case "cancel":
-        game.started = false
       case "time":
         disable()
-        game.started = false;
         break;
     }
   })
@@ -263,8 +260,8 @@ exports.run = async function(msg, args, creator, game, client, prefix) {
     }
   }
 }
-async function setrole(msg, party, game, creator) {
-  game.started = false
+async function setrole(msg, party, creator) {
+  
  // collector
   var player = party;
   var wrole;
@@ -347,9 +344,9 @@ async function setrole(msg, party, game, creator) {
       ]
       break;
   }
-  roll(msg, game, creator, player, wrole, 0)
+  roll(msg, creator, player, wrole, 0)
 }
-async function roll (msg, game, creator, p, r, i) {
+async function roll (msg, creator, p, r, i) {
     var belum,sudah,peran;
         peran = r[i]
         sudah = p.filter(p=>p.role != "")
@@ -372,7 +369,7 @@ async function roll (msg, game, creator, p, r, i) {
       if (antrian == peran.value) {
         if (r[(i)+1] != undefined) {
           let merged = [].concat(sudah, belum)
-          return roll(msg, game, creator, merged, r, (i)+1)
+          return roll(msg, creator, merged, r, (i)+1)
         } else {
           msg.channel.send({
             embeds:[{
@@ -382,7 +379,7 @@ async function roll (msg, game, creator, p, r, i) {
           }]}).then(async (m) => {
             let final = [].concat(sudah, belum)
             await clear(m, 2000)
-            send(msg,final,game,creator)
+            send(msg,final,creator)
           })
         }
         break;
@@ -397,8 +394,8 @@ function teman(array, self) {
     return '';
   }
 }
-async function send(msg, party, game, creator) {
-  game.started = false;
+async function send(msg, party, creator) {
+  
   let count = 0
   let p = party;
   if (p.length > 1) {
@@ -419,7 +416,7 @@ async function send(msg, party, game, creator) {
             description: `Make sure kakak udah dapet semua role nya ya :)\n..um btw mulai permainan sekarang yuk aku mau narasi tau! See ya in 2 seconds!`
         }]}).then(async (m) => {
           await clear(m, 2000)
-          narasi(msg, p, game, creator, "malam", undefined)
+          narasi(msg, p, creator, "malam", undefined)
         })
         break;
       }
@@ -471,8 +468,8 @@ async function updatestatus(player, result, type, callback) {
   }
 }
 
-async function narasi(msg, party, game, creator, days, results) {
-	game.started = false
+async function narasi(msg, party, creator, days, results) {
+	
  // collector
   var day = days === "malam" ? "malam" : "pagi"
   var Kehidupan = party.filter(u=>u.status != mati)
@@ -674,7 +671,7 @@ async function narasi(msg, party, game, creator, days, results) {
                       cpy[a].saved_by = ''
                     }
                     if (count === cpy.length) {
-                      voting(msg, cpy, game,creator)
+                      voting(msg, cpy, creator)
                       break;
                     }
                   }
@@ -784,7 +781,7 @@ async function narasi(msg, party, game, creator, days, results) {
               selectplayer(next.id, next.role, num)
             } else {
               recursive(function(arr) {
-                narasi(msg, party, game, creator, 'pagi', arr)
+                narasi(msg, party, creator, 'pagi', arr)
               })
             }
             break;
@@ -793,7 +790,7 @@ async function narasi(msg, party, game, creator, days, results) {
               selectplayer(next.id, next.role, num)
             } else {
               recursive(function(arr) {
-                narasi(msg, party, game, creator, 'pagi', arr)
+                narasi(msg, party, creator, 'pagi', arr)
               })
             }
             break;
@@ -826,8 +823,8 @@ async function checkwin(player) {
 /* 
 * VOTING ROUND 
 */
-async function voting(msg, party, game, creator) {
-  game.started = false
+async function voting(msg, party, creator) {
+  
   var player = [...party]
   var alive = player.filter(u=>u.status === hidup)
   var death = player.filter(u=>u.status === mati)
@@ -924,10 +921,10 @@ async function voting(msg, party, game, creator) {
             }]}).then(async m => {
               switch (checkwin(arr)) {
                 case 'goodside':
-                  resetPlayer(msg, "goodside", arr, game, creator)
+                  resetPlayer(msg, "goodside", arr, creator)
                   break;
                 case 'badside':
-                  resetPlayer(msg, "badside", arr, game, creator)
+                  resetPlayer(msg, "badside", arr, creator)
                   break;
                 default:
                   msg.channel.send({embeds:[{
@@ -936,7 +933,7 @@ async function voting(msg, party, game, creator) {
                     description: "**Sekarang sore hari, warga kembali ke rumah masing-masing..\nsementara itu *werewolf* sedang melancarkan strategi untuk malam berikut nya...*(to be continued)***"
                   }]}).then(async m=> {
                     setTimeout(function() {
-                      narasi(msg, arr, game, creator, "malam", undefined)
+                      narasi(msg, arr, creator, "malam", undefined)
                     }, 5000);
                   })
                   break;
@@ -951,7 +948,7 @@ async function voting(msg, party, game, creator) {
               }]
             }).then(async m=> {
               setTimeout(function() {
-                voting(msg, party, game, creator)
+                voting(msg, party, creator)
               }, 5000);
             })
           }
@@ -960,7 +957,7 @@ async function voting(msg, party, game, creator) {
     })
 	}
 }
-async function resetPlayer(msg, status, player, game, creator) {
+async function resetPlayer(msg, status, player, creator) {
   var new_player = [...player]
   var count = 0
   for(let i = 0; i < new_player.length;i++) {
@@ -969,13 +966,14 @@ async function resetPlayer(msg, status, player, game, creator) {
     new_player[i].killed_by = ''
     new_player[i].saved_by = ''
     new_player[i].role = ''
+    new_player[i].emoji = ''
     if (count === new_player.length) {
-      restartGame(msg, status, player, new_player, game, creator)
+      restartGame(msg, status, player, new_player, creator)
       break;
     }
   }
 }
-async function restartGame(msg, status, old_player, new_player, game, creator) {
+async function restartGame(msg, status, old_player, new_player, creator) {
   var embed = () => {
     if (status === "goodside") {
       return [{
@@ -1006,7 +1004,7 @@ async function restartGame(msg, status, old_player, new_player, game, creator) {
     }).then(async i => {
       btn.components[0].setDisabled(true)
       await i.update({components: [btn]})
-      setrole(msg, new_player, game, creator)
+      setrole(msg, new_player, creator)
     }).catch(err => {
       btn.components[0].setDisabled(true)
       c.edit({components:[btn]})

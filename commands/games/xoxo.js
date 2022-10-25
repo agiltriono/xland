@@ -2,7 +2,7 @@ const { MessageActionRow, MessageButton } = require("discord.js");
 const fs = require("fs");
 const path = require("path");
 const i18n = require(".././../util/i18n");
-const { database, TIMER_GIF, remove, clear, embeds, getmsg, games } = require(".././../util/util")
+const { database, TIMER_GIF, remove, clear, embeds, getmsg } = require(".././../util/util")
 const db = database.ref("guild");
 const shuffle = require(".././../util/shuffle-array");
 const x = 'X';
@@ -20,9 +20,9 @@ module.exports.help = {
   description: "games.xoxo.description"
 }
 
-exports.run = async function(msg, args, creator, game, client) {
+exports.run = async function(msg, args, creator, client) {
   if (!msg.guild.me.permissions.has("SEND_MESSAGES")) return msg.reply(i18n.__mf("common.command.permissions.missing",{perm:"`SEND_MESSAGES`"}));
-  game.started = true;
+  
  // collector
   const player = [];
   const botplayer = [];
@@ -147,17 +147,17 @@ exports.run = async function(msg, args, creator, game, client) {
     switch (reason) {
       case "start":
         remove(msg, messages[0])
-        play(msg, player, game, bot, client)
+        play(msg, player, bot, client)
         break;
       case "exit":
-        game.started = false;
+        
         remove(msg, messages[0])
         msg.channel.send(embeds(i18n.__("games.lobby.exit"))).then(msg => {
           clear(msg, 5000)
         })
         break;
       case "time":
-        game.started = false;
+        
         remove(msg,messages[0])
         msg.channel.send(embeds(i18n.__("common.commandTimeout"))).then(msg => {
           clear(msg, 5000)
@@ -371,7 +371,7 @@ class AI {
     }
 }
 
-async function play(msg, participant, game, bot, client) {
+async function play(msg, participant, bot, client) {
 var player = participant;
 var button = [];
 var messages = [];
@@ -661,7 +661,7 @@ if (bot === true) {
   });
   
   collector.on("end", (collected, reason) => {
-    game.started = false;
+    
     if (reason == "time") {
       remove(msg, messages[0]).then(() => {
         msg.channel.send(embeds(gameOver())).then(msg => {

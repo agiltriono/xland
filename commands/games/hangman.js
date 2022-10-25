@@ -1,4 +1,4 @@
-const { database, TIMER_GIF, getmsg, remove, clear, embeds, games } = require(".././../util/util");
+const { database, TIMER_GIF, getmsg, remove, clear, embeds } = require(".././../util/util");
 const db = database.ref("guild");
 const shuffle = require(".././../util/shuffle-array");
 const i18n = require(".././../util/i18n");
@@ -16,9 +16,9 @@ module.exports.help = {
   description: "games.hangman.description"
 }
 
-exports.run = async function(msg, args, creator, game, client) {
+exports.run = async function(msg, args, creator, client) {
   if (!msg.guild.me.permissions.has("SEND_MESSAGES")) return msg.reply(i18n.__mf("common.command.permissions.missing",{perm:"`SEND_MESSAGES`"}));
-  game.started = true;
+  
  // collector
   var player = [];
   var botplayer = [];
@@ -123,17 +123,17 @@ exports.run = async function(msg, args, creator, game, client) {
     switch (reason) {
       case "start":
         remove(msg,messages[0])
-        go(msg, player, isBot, botplayer, game, client)
+        go(msg, player, isBot, botplayer, client)
         break;
       case "exit":
-        game.started = false;
+        
         remove(msg,messages[0])
         msg.channel.send(embeds(i18n.__("games.lobby.exit"))).then(msg => {
           clear(msg,5000)
         })
         break;
       case "time":
-        game.started = false;
+        
         remove(msg,messages[0])
         msg.channel.send(embeds(i18n.__("common.commandTimeout"))).then(msg => {
           clear(msg, 5000)
@@ -143,7 +143,7 @@ exports.run = async function(msg, args, creator, game, client) {
     }
   })
 }
-function go(msg, player, isBot, botlayer, game, client) {
+function go(msg, player, isBot, botlayer, client) {
   var firstmsg = []
   
   function getlang(relativeName) {
@@ -196,18 +196,18 @@ function go(msg, player, isBot, botlayer, game, client) {
           clear(msg)
         })
         clear(ms,2000).then(() => {
-          play(msg, player, reason, isBot, botlayer, game, client)
+          play(msg, player, reason, isBot, botlayer, client)
         })
       })
     } else if (reason === "time") {
-      game.started = false;
+      
       msg.channel.send(embeds(i18n.__("common.commandTimeout"))).then(msg => {
         clear(msg,5000)
       })
     }
   })
 }
-function play(msg, participant, language, isBot, botlayer, game, client) {
+function play(msg, participant, language, isBot, botlayer, client) {
   var messages = [];
 	var rounds = 1;
 	var text = '';
@@ -592,7 +592,7 @@ function play(msg, participant, language, isBot, botlayer, game, client) {
     let points = reward()
     clearInterval(interval)
     gameActive = false;
-    game.started = false;
+    
     if(reason == "round" || reason == "time") {
       getmsg(msg, messages[0]).then(msg => {
         msg.edit({

@@ -1,11 +1,7 @@
-// This file is owned and maintained by Ragil Trion Rahman
-// Email me @agiltrion@gmail.com if you want to make a changes or edit this file.
-// any contribution it would be great
-
 const fs = require("fs");
 const path = require("path");
 const i18n = require(".././../util/i18n");
-const { database, TIMER_GIF, getmsg, clear, embeds, remove, games } = require(".././../util/util");
+const { database, TIMER_GIF, getmsg, clear, embeds, remove } = require(".././../util/util");
 const db = database.ref("guild");
 const shuffle = require(".././../util/shuffle-array");
 
@@ -20,9 +16,9 @@ module.exports.help = {
   description: "games.sk.description"
 }
 
-exports.run = async function(msg, args, creator, game, client) {
+exports.run = async function(msg, args, creator, client) {
   if (!msg.guild.me.permissions.has("SEND_MESSAGES")) return msg.reply(i18n.__mf("common.command.permissions.missing",{perm:"`SEND_MESSAGES`"}));
-  game.started = true;
+  
  // collector
   var player = [];
   var botplayer = [];
@@ -128,18 +124,18 @@ exports.run = async function(msg, args, creator, game, client) {
     switch (reason) {
       case "start":
         remove(msg,messages[0])
-        play(msg, player, "id", isBot, botplayer, game, client)
-		game.started = true;
+        play(msg, player, "id", isBot, botplayer, client)
+		
         break;
       case "exit":
-        game.started = false;
+        
         remove(msg,messages[0])
         msg.channel.send(embeds(i18n.__("games.lobby.exit"))).then(msg => {
           clear(msg,5000)
         })
         break;
       case "time":
-        game.started = false;
+        
         remove(msg,messages[0])
         msg.channel.send(embeds(i18n.__("common.commandTimeout"))).then(msg => {
           clear(msg, 5000)
@@ -150,7 +146,7 @@ exports.run = async function(msg, args, creator, game, client) {
   })
 }
 
-async function play(msg, participant, language, isBot, botlayer, game, client) {
+async function play(msg, participant, language, isBot, botlayer, client) {
   var filepath = path.join(__dirname, '..', '.', '..', 'src', 'assets', 'json', 'sk', 'bot.json')
   var json = JSON.parse(fs.readFileSync(filepath));
   var player = participant;
@@ -419,7 +415,7 @@ async function play(msg, participant, language, isBot, botlayer, game, client) {
   })
   
   collector.on("end", (collected, reason) => {
-    game.started = false
+    
     switch (reason) {
       case 'time':
       case 'round':

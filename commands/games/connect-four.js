@@ -2,7 +2,7 @@ const { MessageButton } = require("discord.js");
 const fs = require("fs");
 const path = require("path");
 const i18n = require(".././../util/i18n");
-const { database, TIMER_GIF, remove, clear, embeds, getmsg, games } = require(".././../util/util");
+const { database, TIMER_GIF, remove, clear, embeds, getmsg } = require(".././../util/util");
 const db = database.ref("guild");
 const shuffle = require(".././../util/shuffle-array");
 const x = 0;
@@ -23,9 +23,9 @@ module.exports.help = {
   description: "games.C4.description"
 }
 
-exports.run = async function(msg, args, creator, game, client) {
+exports.run = async function(msg, args, creator, client) {
   if (!msg.guild.me.permissions.has("SEND_MESSAGES")) return msg.reply(i18n.__mf("common.command.permissions.missing",{perm:"`SEND_MESSAGES`"}));
-  game.started = true;
+  
  // collector
   const player = [];
   const messages = [];
@@ -135,20 +135,20 @@ exports.run = async function(msg, args, creator, game, client) {
       case "start":
         remove(msg, messages[0])
         if (bot == true) {
-          AIplay(msg, player, game, bot)
+          AIplay(msg, player, bot)
         } else {
-          HumanPlay(msg, player, game, client)
+          HumanPlay(msg, player, client)
         }
         break;
       case "exit":
-        game.started = false;
+        
         remove(msg, messages[0])
         msg.channel.send(embeds(i18n.__("games.lobby.exit"))).then(msg => {
           clear(msg, 5000)
         })
         break;
       case "time":
-        game.started = false;
+        
         remove(msg,messages[0])
         msg.channel.send(embeds(i18n.__("common.commandTimeout"))).then(msg => {
           clear(msg, 5000)
@@ -158,7 +158,7 @@ exports.run = async function(msg, args, creator, game, client) {
   })
 }
 
-async function HumanPlay(msg, participant, game, client) {
+async function HumanPlay(msg, participant, client) {
 var player = participant;
 var button = [];
 var messages = [];
@@ -571,7 +571,7 @@ messages.push(message.id)
   });
   
   collector.on("end", (collected, reason) => {
-    game.started = false
+    
     if (reason == "time") {
       remove(msg, messages[0]).then(() => {
         msg.channel.send(embeds(gameOver())).then(msg => {
@@ -862,7 +862,7 @@ class AI {
     return string.join('\n')
   }
 }
-async function AIplay(msg, participant, game, bot) {
+async function AIplay(msg, participant, bot) {
 var player = participant;
 var button = [];
 var messages = [];
@@ -1084,7 +1084,7 @@ if (turns[0] == 1) {
   });
   
   collector.on("end", (collected, reason) => {
-    game.started = false
+    
     if (reason == "time") {
       remove(msg, messages[0]).then(() => {
         msg.channel.send(embeds(gameOver())).then(msg => {

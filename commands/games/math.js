@@ -1,4 +1,4 @@
-const { database, TIMER_GIF, remove, clear, embeds, games } = require(".././../util/util");
+const { database, TIMER_GIF, remove, clear, embeds } = require(".././../util/util");
 const db = database.ref("guild");
 const shuffle = require(".././../util/shuffle-array");
 const i18n = require(".././../util/i18n");
@@ -14,9 +14,9 @@ module.exports.help = {
   description: "games.math.description"
 }
 
-exports.run = async (msg, args, creator, game, client) => {
+exports.run = async (msg, args, creator, client) => {
   if (!msg.guild.me.permissions.has("SEND_MESSAGES")) return msg.reply(i18n.__mf("common.command.permissions.missing",{perm:"`SEND_MESSAGES`"}));
-  game.started = true;
+  
   var messages = [];
   var dif = [];
   var operand = [];
@@ -180,7 +180,7 @@ exports.run = async (msg, args, creator, game, client) => {
   
   collector.on("end", (collected, reason) => {
     amswer = true
-    game.started = false;
+    
     if (reason == "time") {
       remove(msg, messages[0]).then(() => {
         msg.channel.send(embeds(i18n.__mf("games.math.ingame.timeout",{
