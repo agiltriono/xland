@@ -15,7 +15,7 @@
   "author": "agiltriono <agiltriono71@yahoo.com>",
   "license": "ISC",
   "dependencies": {
-    "array-move": "^3.0.1",
+    "array-move": "^4.0.0",
     "axios": "^0.23.0",
     "cheerio": "^1.0.0-rc.10",
     "discord.js": "^13.12.0",
