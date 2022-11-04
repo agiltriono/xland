@@ -23,8 +23,8 @@ module.exports.help = {
 }
 
 exports.run = async function(msg, args, creator, client, prefix) {
-  await msg.delete()
-  if (!msg.guild.me.permissions.has("SEND_MESSAGES")) return msg.reply(embeds(i18n.__mf("common.command.permissions.missing",{perm:"`SEND_MESSAGES`"})));
+  await clear(msg, 1000)
+  if (!msg.guild.me.permissions.has("SEND_MESSAGES")) return msg.chanel.send(embeds(i18n.__mf("common.command.permissions.missing",{perm:"`SEND_MESSAGES`"})));
   const cmd = args.join(" ")
   if (args.length > 0 && cmd.replace(/ +/, "").toLowerCase() === "how2play") return help(msg, args, creator, client, prefix);
  // collector
@@ -719,7 +719,7 @@ async function voting(msg, party, creator) {
     while(obj.length){
       chunks.push({
         type: 1,
-       components: [obj.splice(0, i)]
+       components: obj.splice(0, i)
       });
     }
     return chunks;

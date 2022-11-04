@@ -12,6 +12,7 @@ module.exports.help = {
   description: "utility.uptime.description"
 }
 module.exports.run = async (msg, args) => {
+  await msg.delete()
   try {
     
     var totalSeconds = (msg.client.uptime / 1000);

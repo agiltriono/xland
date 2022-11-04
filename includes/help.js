@@ -32,7 +32,7 @@ module.exports = async function help(msg, args, creator, mention, prefix) {
     		    icon_url: msg.client.user.displayAvatarURL()
     		  },
     		  title: i18n.__mf("help.command.title", { commandName : command.name.slice(0, 1).toUpperCase() + command.name.slice(1) }),
-    		  description: i18n.__mf("help.command.list", { h_name : command.name, h_desc : i18n.__(command.description) || i18n.__("common.command.nodescription"), h_use : command.usage ? prefix+command.name+" "+command.usage : i18n.__("common.command.nousage"), h_alias : command.aliases ? command.aliases.join(", ") : i18n.__("common.command.none"), h_cat : command.category ? command.category : "General" || "Misc"}),
+    		  description: i18n.__mf("help.command.list", { h_name : command.name, h_desc : i18n.__(command.description) || i18n.__("common.command.nodescription"), h_use : command.usage ? prefix+command.name+" "+command.usage : i18n.__("common.command.nousage"), h_alias : command.aliases ? command.aliases.join(", ") : i18n.__("common.command.none"), h_cat : command.category }),
     		  footer: {
     		    text: i18n.__mf("help.embed.footer", { author: msg.author.tag }), 
     		    icon_url: msg.author.displayAvatarURL()
@@ -60,8 +60,8 @@ async function commandhelp(msg, creator, prefix) {
   var max = fields.length;
   var min = 0;
   fs.readdirSync("./commands/").forEach(category => {
-    const dir = msg.client.commands.filter(obj => obj.help.category.toLowerCase() === category.toLowerCase());
-    const capitalise = category.slice(0, 1).toUpperCase() + category.slice(1);
+		const dir = msg.client.commands.filter(obj => obj.help.category.toLowerCase() === category.toLowerCase());
+	  const capitalise = category.slice(0, 1).toUpperCase() + category.slice(1);
     try {
       if (dir.size != 0) {
       	if (!msg.member.permissions.has("ADMINISTRATOR")) {

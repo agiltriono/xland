@@ -21,6 +21,7 @@ module.exports.help = {
 }
 
 exports.run = async function(msg, args, creator, client) {
+  await msg.delete()
   if (!msg.guild.me.permissions.has("SEND_MESSAGES")) return msg.reply(i18n.__mf("common.command.permissions.missing",{perm:"`SEND_MESSAGES`"}));
   
  // collector
@@ -80,22 +81,18 @@ exports.run = async function(msg, args, creator, client) {
   })
   // Collector
   // collect all incoming msg
-  const filter = m => m.content && m.author.id != m.client.user.id;
-  const collector = msg.channel.createMessageCollector({ filter, time : 20000 });
+  const filter = m => m.customId && m.user.id;
+  const collector = msg.channel.createMessageComponentCollector({
+  filter,
+  componentType: "BUTTON",
+  time : 20000 });
   
-  collector.on("collect", m => {
-    const author = m.author;
+  collector.on("collect", async m => {
+    const author = m.user.id;
     const content = m.content;
     if (content.toLowerCase().startsWith("add")) {
-      if (!player.some(obj => obj.id == m.author.id)) return m.reply(i18n.__("games.notjoin"));
+      if (!player.some(obj => obj.id == author)) return m.reply(i18n.__("games.notjoin"));
       if (player.length > 1 && player.length < 3) return;
-      const regex = /^<@!?[0-9]*>$/gm;
-      const tag = content.toLowerCase().slice("add").trim().split(/ +/g);
-        if (tag[1] == undefined) {
-          m.reply(i18n.__("common.command.invalid")).then(msg => {
-            clear(msg, 2000)
-          })
-        } else {
           if (!regex.test(tag[1])) {
             if (tag[1].toLowerCase() === "bot") {
               if (!player.some(obj => obj.id == m.author.id)) return m.reply(i18n.__("games.notjoin"));
@@ -119,7 +116,6 @@ exports.run = async function(msg, args, creator, client) {
               })
             }
           }
-        }
       } else if (content.toLowerCase() == "join") {
         if (players(author.id) == undefined) {
           if (player.length > 1 && player.length < 3) return;
@@ -589,10 +585,6 @@ function display() {
   })
 }
 
-if (msg.deferred == false){
-   await msg.deferReply()
-};
-
 const message = await msg.channel.send({
   embeds: [{
     description: `${playerTurn()}`,
@@ -613,14 +605,17 @@ if (bot === true) {
     })
   }
 }
-  
+  const filter = i => {
+    if (!player.some(obj => obj.id == i.user.id)) return i.reply({ content : i18n.__("games.notplayer"), ephemeral: true });
+    return i.customId && i.user.id
+  }
   const collector = message.createMessageComponentCollector({
+    filter,
     componentType: 'BUTTON',
     time: 20000
   });
   
   collector.on("collect", async (i) => {
-    if (!player.some(obj => obj.id == i.user.id)) return i.reply({ content : i18n.__("games.notplayer"), ephemeral: true });
     if (i.user.id === players(turns[0]).id && i.customId != button[9].customId) {
       switch (i.customId) {
         case button[0].customId:
