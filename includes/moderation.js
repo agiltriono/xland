@@ -27,7 +27,6 @@ module.exports = {
         return false;
       }
     } else if (type === "qr_only") {
-      await msg.delete()
       if (string.startsWith("quotes ") && string.startsWith("riddle ")) {
         const webhook = await msg.channel.createWebhook(msg.author.username, {avatar: msg.author.displayAvatarURL({format:"jpg"})})
         const content = {
@@ -38,10 +37,12 @@ module.exports = {
             }
           ]
         }
+        await msg.delete()
         await webhook.send(content)
         await webhook.delete();
         return true;
       } else {
+        await msg.delete()
         return true;
       }
     } else {
