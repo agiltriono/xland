@@ -21,19 +21,42 @@ exports.embeds = function(content, footer) {
     return {
       embeds : [{
         description : content,
-        color: colorful()
+        color: "#ae4bdc"
       }]
     }
   } else {
     return {
       embeds : [{
+        color: "#ae4bdc",
         description : content,
         footer: {
           text: footer.text,
           icon_url: footer.url
-        },
-        color: colorful()
+        }
       }]
+    }
+  }
+}
+exports.ephemeral = function(content, footer) {
+  if (typeof footer == "undefined") {
+    return {
+      embeds : [{
+        description : content,
+        color: "#ae4bdc"
+      }],
+      ephemeral: true
+    }
+  } else {
+    return {
+      embeds : [{
+        color: "#ae4bdc",
+        description : content,
+        footer: {
+          text: footer.text,
+          icon_url: footer.url
+        }
+      }],
+      ephemeral: true
     }
   }
 }
@@ -95,7 +118,10 @@ exports.games = class games {
     this.started = started;
   }
 }
-
+exports.rich = function (e, n) {
+  const obj = e.length != 0 ? e[0] : {}
+  return Object.assign({},obj,n)
+}
 exports.timeconvert = function(secs) {
   const hours = Math.floor(secs / (60 * 60));
   const divisor_for_minutes = secs % (60 * 60);
@@ -108,8 +134,15 @@ exports.timeconvert = function(secs) {
     s: seconds
   };
 }
-exports.color = function () {
-  return colorful()
+exports.color = function (c) {
+  // default color #ae4bdc
+  if (c == undefined) return "#ae4bdc";
+  if (c == "random") return colorful();
+}
+exports.isNumber = function (char) {
+  if (typeof char !== 'string') return false;
+  if (char.trim() === '') return false;
+  return !isNaN(char);
 }
 exports.database = admin.database();
 exports.DISCORD_TOKEN = process.env.DISCORD_TOKEN;
@@ -122,6 +155,8 @@ exports.FLICKR_KEY = process.env.FLICKR_KEY;
 exports.IMGUR_ID = process.env.IMGUR_ID;
 exports.TENOR_KEY = process.env.TENOR_KEY;
 exports.GIPHY_KEY = process.env.GIPHY_KEY;
+exports.PLAYER_IMAGE = process.env.PLAYER_IMAGE;
+exports.PLAYER_BANNER = process.env.PLAYER_BANNER;
 exports.TIMER_GIF = process.env.TIMER_GIF;
 exports.TIMER_10S = process.env.TIMER_10S;
 exports.dev_id = process.env.dev_id;

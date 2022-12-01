@@ -3,7 +3,7 @@ const path = require("path");
 module.exports = {
   name : "ready",
   async execute(client) {
-    const directory = path.join(__dirname, "..","commands");
+    const directory = path.join(__dirname, "..",".","..","commands");
     client.user.setActivity(`Knight with xlhelp`, { type: "PLAYING" });
     // command handler
     fs.readdirSync(directory).forEach(child => {
