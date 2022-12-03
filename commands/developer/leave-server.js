@@ -11,7 +11,7 @@ module.exports.help = {
 }
 
 module.exports.run = async (msg, args, creator, prefix) => {
-  await msg.delete
+  await msg.delete()
   if (creator.id != dev_id) return msg.channel.send(embeds("⚠️ Access denied!")).then(m=> clear(m, 3000));
   if (!msg.guild.me.permissions.has("SEND_MESSAGES")) return msg.channel.send(embeds("❌ Aku butuh permissions `SEND_MESSAGES`")).then(m=> clear(m, 3000));
   const guild = msg.guild

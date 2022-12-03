@@ -64,8 +64,8 @@ async function commandhelp(msg, creator, prefix) {
 	  const capitalise = category.slice(0, 1).toUpperCase() + category.slice(1);
     try {
       if (dir.size != 0) {
-      	if (!msg.member.permissions.has("ADMINISTRATOR")) {
-      	  if (category != "setting") {
+      	if (creator.id != dev_id) {
+      	  if (category.toLowerCase() != "developer") {
         		fields.push({desc: `
         		**${capitalise}**\n\n${dir.map(obj => `**${prefix}${obj.help.name} ${obj.help.usage}**\n${i18n.__(obj.help.description)}`).join("\n\n\n")}`});
         		max = fields.length
