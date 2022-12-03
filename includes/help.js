@@ -1,4 +1,4 @@
-const { embeds, getmsg, remove } = require("../util/util"); 
+const { embeds, getmsg, remove, dev_id} = require("../util/util"); 
 const i18n = require("../util/i18n");
 const fs = require("fs");
 const colorful = require("../util/color");
