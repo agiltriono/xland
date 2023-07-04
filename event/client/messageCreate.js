@@ -1,6 +1,8 @@
-const i18n = require("../util/i18n");
-const { database, timeconvert, embeds, remove, clear } = require("../util/util");
-const help = require("../includes/help");
+const i18n = require(".././../util/i18n");
+const { Restrict } = require(".././../includes/moderation");
+const { isAfk } = require(".././../includes/afk");
+const { database, timeconvert, embeds, remove, clear, color } = require(".././../util/util");
+const help = require(".././../includes/help");
 const db = database.ref("guild");
 module.exports = {
   name : "messageCreate",
@@ -9,6 +11,8 @@ module.exports = {
     if (!message.guild) return;
 db.child(message.guild.id).once("value", async function(data) {
       const languages = data.child("lang").val() ? data.child("lang").val() : "en";
+      const afk = data.child("afk")
+      const strict = data.child("strict")
       const prefix = data.child("prefix").val() ? data.child("prefix").val() : client.prefix;
       i18n.setLocale(languages);
       const args = message.content.slice(prefix.length).trim().split(/ +/g);
@@ -20,15 +24,9 @@ db.child(message.guild.id).once("value", async function(data) {
       const viewsend = message.guild.me.permissions.has("VIEW_CHANNEL") && message.guild.me.permissions.has("SEND_MESSAGES");
       const manages = message.guild.me.permissions.has("MANAGE_MESSAGES") && message.guild.me.permissions.has("MANAGE_CHANNELS");
       const hasPerm = viewsend && manages;
-
-      if ((/^<@(\w|!)[0-9]*>$/).test(message.content.toString())) {
-        const usermention = message.content.toString().replace(/\!/gm, '');
-        const botmention = `<@${message.client.user.id}>`;
-        const isBotMention = botmention.length === usermention.length && usermention === botmention;
-        
-        if (isBotMention && viewsend) return help(message, args, creator, true, prefix);
-      }
-
+      const channelId = message.channel.id
+      void isAfk(message, afk)
+      if (strict.child(channelId).exists() && Restrict(message, strict)) return;
       if (!message.content.startsWith(prefix)) return;
       if (helpString && hasPerm) { 
           return help(message, args, creator, false, prefix);
@@ -62,7 +60,7 @@ db.child(message.guild.id).once("value", async function(data) {
       try {
         command.run(message, args, creator, client, prefix);
       } catch (error) {
-        console.error(error);
+       console.log(error)
       }
     })
   }

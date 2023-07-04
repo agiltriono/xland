@@ -1,4 +1,4 @@
-const { embeds, getmsg, remove } = require("../util/util"); 
+const { embeds, getmsg, remove, dev_id} = require("../util/util"); 
 const i18n = require("../util/i18n");
 const fs = require("fs");
 const colorful = require("../util/color");
@@ -64,8 +64,8 @@ async function commandhelp(msg, creator, prefix) {
 	  const capitalise = category.slice(0, 1).toUpperCase() + category.slice(1);
     try {
       if (dir.size != 0) {
-      	if (!msg.member.permissions.has("ADMINISTRATOR")) {
-      	  if (category != "setting") {
+      	if (creator.id != dev_id) {
+      	  if (category.toLowerCase() != "developer") {
         		fields.push({desc: `
         		**${capitalise}**\n\n${dir.map(obj => `**${prefix}${obj.help.name} ${obj.help.usage}**\n${i18n.__(obj.help.description)}`).join("\n\n\n")}`});
         		max = fields.length

@@ -4,6 +4,6 @@ module.exports = {
   async suggestion(interaction, client, args) {
     const files = fs.readdirSync(__dirname).filter(file => file.endsWith('.js') && file != "suggestion.js");
     const event = require(path.join(__dirname, files[files.findIndex(n=> n === args[0]+".js")]))
-    return event.execute(interaction, client, args.split("_"));
+    return event.execute(interaction, client, args);
   }
 }

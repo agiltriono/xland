@@ -13,7 +13,15 @@ module.exports.help = {
 }
 
 module.exports.run = async (msg, args, creator, client, old) => {
-  if (!msg.member.permissions.has("ADMINISTRATOR")) return msg.reply(i18n.__("common.command.permissions.denied"));
+  await msg.delete()
+  const permis = [
+    (msg.member.permissions.has("ADMINISTRATOR")),
+    (msg.member.permissions.has("MANAGE_GUILD")),
+    (creator.id === msg.guild.ownerId)
+  ].filter(u=>u.toString() != "false")
+  if(permis.length === 0) return;
+  // ID_CHANNEL
+  if (!msg.guild.me.permissions.has("SEND_MESSAGES")) return msg.channel.send(embeds("❌ Aku butuh permissions `SEND_MESSAGES`")).then(m=> clear(m, 3000));
   var prefixes = [];
   var messages = [];
   db.child(msg.guild.id).once("value",async(data) => {
